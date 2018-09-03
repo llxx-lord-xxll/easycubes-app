@@ -1,0 +1,21 @@
+# Global parameter defaults
+path: C:\inetpub\wwwroot\easycubesapp\
+url: http://easycubesapp.lc
+user: Pranto
+color: false
+disabled_commands:
+  - db drop
+
+# Subcommand defaults (e.g. `wp config create`)
+config create:
+    dbuser: easycubes_app
+    dbpass: qiAFoAOL5GCDcaiR
+    extra-php: |
+        define( 'WP_DEBUG', true );
+        define( 'WP_MULTI
+
+
+# '_' is a special value denoting configuration options for this wp-cli.yml
+_:
+    # Merge subcommand defaults from the upstream config.yml, instead of overriding
+    merge: true

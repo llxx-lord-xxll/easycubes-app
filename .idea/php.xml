@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="C:/inetpub/wwwroot/easycubesapp" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/wp-cli" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/php-cli-tools" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/mustangostang-spyc" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/array_column" />
+      <path value="$PROJECT_DIR$/vendor/rmccue/requests" />
+      <path value="$PROJECT_DIR$/vendor/mustache/mustache" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+    </include_path>
+  </component>
+</project>
