@@ -30,6 +30,15 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( ! defined( 'EASYCUBES_APP_PLUGIN_DIR' ) ) {
+    define("EASYCUBES_APP_PLUGIN_DIR",plugin_dir_path(__FILE__));
+}
+
+if ( ! defined( 'EASYCUBES_APP_PLUGIN_URL' ) ) {
+    define("EASYCUBES_APP_PLUGIN_URL",plugins_url()."/easycubes-app");
+}
+
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org

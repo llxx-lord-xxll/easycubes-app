@@ -102,11 +102,31 @@ class Easycubes_App_Admin {
 
     function eapp_menu_sections()
     {
-        add_menu_page("Partner Articles","Easycubes App","manage_options","easycubes_app","easycubes_app_list","dashicons-images-alt");
-        add_submenu_page("easycubes_app","Artciles","Artciles","manage_options","easycubes_app","easycubes_app_list");
-        add_submenu_page("easycubes_app","Add New Article","Add New Article","manage_options","easycubes_app_add_articles","easycubes_app_add_articles");
-        add_submenu_page("easycubes_app","Folders","Folders","manage_options","easycubes_app_folders","easycubes_app_folders");
-        add_submenu_page("easycubes_app","Access Security","Access Security","manage_options","easycubes_app_security","easycubes_app_security");
+        add_menu_page("Partner Articles","Easycubes App","manage_options","easycubes_app",array($this,"easycubes_app_list"),"dashicons-images-alt");
+        add_submenu_page("easycubes_app","Artciles","Artciles","manage_options","easycubes_app",array($this,"easycubes_app_list"));
+        add_submenu_page("easycubes_app","Add New Article","Add New Article","manage_options","easycubes_app_add_articles",array($this,"easycubes_app_add_articles"));
+        add_submenu_page("easycubes_app","Folders","Folders","manage_options","easycubes_app_folders",array($this,"easycubes_app_folders"));
+        add_submenu_page("easycubes_app","Access Security","Access Security","manage_options","easycubes_app_security",array($this,"easycubes_app_security"));
+    }
+
+    public function easycubes_app_list()
+    {
+        include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-articles.php";
+    }
+
+    public function easycubes_app_add_articles()
+    {
+        include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-add-articles.php";
+    }
+
+    public function easycubes_app_folders()
+    {
+        include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-folders.php";
+    }
+
+    public function easycubes_app_security()
+    {
+        include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-security.php";
     }
 
 }
