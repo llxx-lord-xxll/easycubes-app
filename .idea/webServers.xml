@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bc82dce5-93ff-44eb-81b4-d322907cd9f1" name="Easycubes App" url="http://easycubesapp.lc">
+        <fileTransfer port="0" mountedRoot="C:\inetpub\wwwroot\easycubesapp\wp-content\plugins\easycubes-app" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

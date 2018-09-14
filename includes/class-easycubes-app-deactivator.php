@@ -31,6 +31,47 @@ class Easycubes_App_Deactivator {
 	 */
 	public static function deactivate() {
 
+	    self::EasyCubesApp_DropTables();
 	}
+
+    public static function EasyCubesApp_DropTables()
+    {
+        global $wpdb;
+        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_table());
+        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_meta_table());
+        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_tabs_table());
+        $wpdb->query("Drop table if exists " . self::EasyCubesApp_folders_table());
+        $wpdb->query("Drop table if exists " . self::EasyCubesApp_galleries_table());
+    }
+
+    public static function EasyCubesApp_articles_table()
+    {
+        global $wpdb;
+        return $wpdb->prefix . 'easycubes_app_articles';
+    }
+
+    public static function EasyCubesApp_articles_meta_table()
+    {
+        global $wpdb;
+        return $wpdb->prefix . 'easycubes_app_articles_meta';
+    }
+
+    public static function EasyCubesApp_articles_tabs_table()
+    {
+        global $wpdb;
+        return $wpdb->prefix . 'easycubes_app_articles_tabs';
+    }
+
+    public static function EasyCubesApp_folders_table()
+    {
+        global $wpdb;
+        return $wpdb->prefix . 'easycubes_app_folders';
+    }
+
+    public static function EasyCubesApp_galleries_table()
+    {
+        global $wpdb;
+        return $wpdb->prefix . 'easycubes_app_galleries';
+    }
 
 }

@@ -43,6 +43,7 @@ define( 'PLUGIN_NAME_VERSION', '1.0.0' );
  */
 function activate_easycubes_app() {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-easycubes-app-activator.php';
+
     Easycubes_App_Activator::activate();
 }
 
