@@ -100,4 +100,13 @@ class Easycubes_App_Admin {
 
 	}
 
+    function eapp_menu_sections()
+    {
+        add_menu_page("Partner Articles","Easycubes App","manage_options","easycubes_app","easycubes_app_list","dashicons-images-alt");
+        add_submenu_page("easycubes_app","Artciles","Artciles","manage_options","easycubes_app","easycubes_app_list");
+        add_submenu_page("easycubes_app","Add New Article","Add New Article","manage_options","easycubes_app_add_articles","easycubes_app_add_articles");
+        add_submenu_page("easycubes_app","Folders","Folders","manage_options","easycubes_app_folders","easycubes_app_folders");
+        add_submenu_page("easycubes_app","Access Security","Access Security","manage_options","easycubes_app_security","easycubes_app_security");
+    }
+
 }

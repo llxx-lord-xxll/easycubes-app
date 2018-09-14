@@ -157,6 +157,9 @@ class Easycubes_App {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		//Define menu and submenu
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'eapp_menu_sections' );
+
 	}
 
 	/**
