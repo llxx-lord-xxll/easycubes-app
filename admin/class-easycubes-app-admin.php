@@ -74,6 +74,8 @@ class Easycubes_App_Admin {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/easycubes-app-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "bootstrap.min.css", plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "jquery.dataTables.min.css", plugin_dir_url( __FILE__ ) . 'css/jquery.dataTables.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -97,6 +99,10 @@ class Easycubes_App_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/easycubes-app-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( "bootstrap.min.js", plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( "jquery.dataTables.min.js", plugin_dir_url( __FILE__ ) . 'js/jquery.dataTables.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( "jquery.validate.min.js", plugin_dir_url( __FILE__ ) . 'js/jquery.validate.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( "jquery.notifyBar.js", plugin_dir_url( __FILE__ ) . 'js/jquery.notifyBar.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -106,7 +112,7 @@ class Easycubes_App_Admin {
         add_submenu_page("easycubes_app","Artciles","Artciles","manage_options","easycubes_app",array($this,"easycubes_app_list"));
         add_submenu_page("easycubes_app","Add New Article","Add New Article","manage_options","easycubes_app_add_articles",array($this,"easycubes_app_add_articles"));
         add_submenu_page("easycubes_app","Folders","Folders","manage_options","easycubes_app_folders",array($this,"easycubes_app_folders"));
-        add_submenu_page("easycubes_app","Access Security","Access Security","manage_options","easycubes_app_security",array($this,"easycubes_app_security"));
+
     }
 
     public function easycubes_app_list()
@@ -124,9 +130,5 @@ class Easycubes_App_Admin {
         include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-folders.php";
     }
 
-    public function easycubes_app_security()
-    {
-        include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-security.php";
-    }
 
 }

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40fdb26f-ec0e-48ae-819e-b2bcadc06ab1" name="Default" comment="Define Menu and Submenu Callbacks">
-      <change afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-folders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php" afterDir="false" />
+    <list default="true" id="40fdb26f-ec0e-48ae-819e-b2bcadc06ab1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easycubes-app.php" beforeDir="false" afterPath="$PROJECT_DIR$/easycubes-app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class-easycubes-app.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-easycubes-app.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="easycubes-app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/easycubes-app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
               <folding>
                 <element signature="e#7#943#0#PHP" expanded="true" />
               </folding>
@@ -35,20 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class-easycubes-app-admin.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="class-easycubes-app-admin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="128" column="97" selection-start-line="128" selection-start-column="97" selection-end-line="128" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="easycubes-app-admin-security.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
             </state>
           </provider>
         </entry>
@@ -57,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
               <folding>
                 <element signature="e#7#287#0#PHP" expanded="true" />
               </folding>
@@ -69,12 +59,12 @@
         <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="12" />
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="easycubes-app-admin-folders.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="easycubes-app-admin-folders.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-folders.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -86,8 +76,8 @@
       <file leaf-file-name="class-easycubes-app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="148" column="6" lean-forward="true" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+            <state relative-caret-position="318">
+              <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -95,8 +85,8 @@
       <file leaf-file-name="class-easycubes-app-activator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-activator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -104,8 +94,8 @@
       <file leaf-file-name="class-easycubes-app-deactivator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-deactivator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="663">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -154,13 +144,13 @@
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/includes/class-easycubes-app-activator.php" />
         <option value="$PROJECT_DIR$/includes/class-easycubes-app-deactivator.php" />
-        <option value="$PROJECT_DIR$/includes/class-easycubes-app.php" />
         <option value="$PROJECT_DIR$/easycubes-app.php" />
-        <option value="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" />
+        <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-folders.php" />
+        <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php" />
+        <option value="$PROJECT_DIR$/includes/class-easycubes-app.php" />
         <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php" />
         <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php" />
-        <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php" />
-        <option value="$PROJECT_DIR$/admin/partials/easycubes-app-admin-folders.php" />
+        <option value="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" />
       </list>
     </option>
   </component>
@@ -225,12 +215,30 @@
               <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
@@ -291,7 +299,8 @@
       <workItem from="1536783688172" duration="588000" />
       <workItem from="1536812004115" duration="524000" />
       <workItem from="1536813390721" duration="1835000" />
-      <workItem from="1536903480030" duration="5765000" />
+      <workItem from="1536903480030" duration="6512000" />
+      <workItem from="1536927822245" duration="4055000" />
     </task>
     <task id="LOCAL-00001" summary="Framework &amp; Working Environment Setup">
       <created>1535964607330</created>
@@ -314,11 +323,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536907932813</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Define Menu and Submenu Callbacks">
+      <created>1536912410833</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536912410833</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29346000" />
+    <option name="totallyTimeSpent" value="34148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -328,15 +344,16 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50065106" side_tool="true" weight="0.32965517" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" order="8" visible="true" weight="0.2137931" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.32965517" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.32965517" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49934897" weight="0.32965517" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32965517" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -344,7 +361,6 @@
       <window_info anchor="bottom" id="Command Line Tools Console" order="8" weight="0.32965517" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,12 +373,82 @@
     <MESSAGE value="Framework &amp; Working Environment Setup" />
     <MESSAGE value="Setting Up Database Create on Activation&#10;&amp; Drop on Deactivation" />
     <MESSAGE value="Define Menu and Submenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Define Menu and Submenu" />
+    <MESSAGE value="Define Menu and Submenu Callbacks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Define Menu and Submenu Callbacks" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>C:\inetpub\wwwroot\easycubesapp</wordpressPath>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/easycubes-app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#7#943#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="108" column="158" lean-forward="true" selection-start-line="108" selection-start-column="158" selection-end-line="108" selection-end-column="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#7#287#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-folders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-activator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-deactivator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/easycubes-app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -542,22 +628,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-activator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        <state relative-caret-position="289">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-deactivator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="148" column="6" lean-forward="true" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+        <state relative-caret-position="663">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -565,50 +644,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#7#287#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/easycubes-app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding>
             <element signature="e#7#943#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="128" column="97" selection-start-line="128" selection-start-column="97" selection-end-line="128" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#7#287#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -616,6 +661,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-add-articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/class-easycubes-app-public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="176" column="45" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/partials/easycubes-app-admin-articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding>
+            <element signature="e#7#287#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
         </state>
       </provider>
     </entry>

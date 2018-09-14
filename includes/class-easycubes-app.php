@@ -160,6 +160,9 @@ class Easycubes_App {
 		//Define menu and submenu
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'eapp_menu_sections' );
 
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'eapp_update_access_key' );
+
+
 	}
 
 	/**

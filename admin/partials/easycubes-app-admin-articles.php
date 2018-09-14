@@ -13,5 +13,5 @@
  */
 ?>
 
-List Articles
+<h2 class="text-danger"> adsf asdf </h2>
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
