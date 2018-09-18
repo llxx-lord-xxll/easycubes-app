@@ -31,24 +31,7 @@ class Easycubes_App_Deactivator {
 	 */
 	public static function deactivate() {
 
-	    self::EasyCubesApp_DropTables();
 	}
-
-    public static function EasyCubesApp_DropTables()
-    {
-        require_once EASYCUBES_APP_PLUGIN_DIR . "includes/class-easycubes-app-tables.php";
-
-
-        global $wpdb;
-        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_table());
-        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_meta_table());
-        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_tabs_table());
-        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::folders_table());
-        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::galleries_table());
-
-
-
-    }
 
 
 }

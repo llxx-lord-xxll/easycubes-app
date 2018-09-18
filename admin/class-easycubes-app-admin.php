@@ -57,7 +57,6 @@ class Easycubes_App_Admin {
 
     function wpdocs_codex_eaarticles_init() {
 
-        require_once EASYCUBES_APP_PLUGIN_DIR . "includes/class-easycubes-app-tables.php";
         $labels = array(
             'name'                  => _x( 'Articles', 'Post type general name', 'textdomain' ),
             'singular_name'         => _x( 'Article', 'Post type singular name', 'textdomain' ),
