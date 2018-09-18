@@ -37,14 +37,15 @@ class Easycubes_App_Activator {
 
 	private static  function EasyCubesApp_create_tables( )
     {
-        require_once (ABSPATH. "wp-admin/includes/upgrade.php"); 
+        require_once (ABSPATH. "wp-admin/includes/upgrade.php");
+        require_once EASYCUBES_APP_PLUGIN_DIR . "includes/class-easycubes-app-tables.php";
 
         global $wpdb;
 
         if (count($wpdb->get_var("Show tables like '".
-                self::EasyCubesApp_articles_table()."';")) == 0)
+                Easycubes_App_Tables::articles_table()."';")) == 0)
         {
-            $query = "CREATE TABLE `".self::EasyCubesApp_articles_table()."` (
+            $query = "CREATE TABLE `".Easycubes_App_Tables::articles_table()."` (
                          `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
                          `author` bigint(20) NOT NULL,
                          `posted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -58,9 +59,9 @@ class Easycubes_App_Activator {
 
 
         if (count($wpdb->get_var("Show tables like '".
-            self::EasyCubesApp_articles_meta_table()."';")) == 0)
+                Easycubes_App_Tables::articles_meta_table()."';")) == 0)
         {
-            $query = "CREATE TABLE `".self::EasyCubesApp_articles_meta_table()."` (
+            $query = "CREATE TABLE `".Easycubes_App_Tables::articles_meta_table()."` (
                      `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
                      `article_id` bigint(20) NOT NULL,
                      `meta_key` varchar(128) NOT NULL,
@@ -71,9 +72,9 @@ class Easycubes_App_Activator {
         }
 
         if (count($wpdb->get_var("Show tables like '".
-            self::EasyCubesApp_articles_tabs_table()."';")) == 0)
+                Easycubes_App_Tables::articles_tabs_table()."';")) == 0)
         {
-            $query = "CREATE TABLE `".self::EasyCubesApp_articles_tabs_table()."` (
+            $query = "CREATE TABLE `".Easycubes_App_Tables::articles_tabs_table()."` (
                      `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
                      `article_id` bigint(20) NOT NULL,
                      `title` varchar(30) NOT NULL,
@@ -84,9 +85,9 @@ class Easycubes_App_Activator {
             dbDelta($query);
         }
         if (count($wpdb->get_var("Show tables like '".
-            self::EasyCubesApp_folders_table()."';")) == 0)
+                Easycubes_App_Tables::folders_table()."';")) == 0)
         {
-            $query = "CREATE TABLE `".self::EasyCubesApp_folders_table()."` (
+            $query = "CREATE TABLE `".Easycubes_App_Tables::folders_table()."` (
                          `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
                          `title` varchar(20) NOT NULL,
                          `icon` bigint(20) NOT NULL,
@@ -96,9 +97,9 @@ class Easycubes_App_Activator {
         }
 
         if (count($wpdb->get_var("Show tables like '".
-            self::EasyCubesApp_galleries_table()."';")) == 0)
+                Easycubes_App_Tables::galleries_table()."';")) == 0)
         {
-            $query = "CREATE TABLE `".self::EasyCubesApp_galleries_table()."` (
+            $query = "CREATE TABLE `".Easycubes_App_Tables::galleries_table()."` (
                      `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
                      `author` bigint(20) NOT NULL,
                      `posted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -110,33 +111,5 @@ class Easycubes_App_Activator {
         }
     }
 
-    public static function EasyCubesApp_articles_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles';
-    }
 
-    public static function EasyCubesApp_articles_meta_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles_meta';
-    }
-
-    public static function EasyCubesApp_articles_tabs_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles_tabs';
-    }
-
-    public static function EasyCubesApp_folders_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_folders';
-    }
-
-    public static function EasyCubesApp_galleries_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_galleries';
-    }
 }

@@ -153,14 +153,23 @@ class Easycubes_App {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Easycubes_App_Admin( $this->get_plugin_name(), $this->get_version() );
-
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		//Define menu and submenu
+        $this->loader->add_action( 'init', $plugin_admin ,'wpdocs_codex_eaarticles_init' );
+        $this->loader->add_action( 'admin_init', $plugin_admin ,'populate_ea_article_metas' );
+        $this->loader->add_action( 'save_post', $plugin_admin ,'save_eaarticle' );
+
+        $this->loader->add_action( 'wp_ajax_reset_upload_dir', $plugin_admin ,'reset_upload_dir' );
+        $this->loader->add_action( 'wp_ajax_modify_upload_dir', $plugin_admin ,'modify_upload_dir' );
+        $this->loader->add_action( 'wp_ajax_get_eagallery', $plugin_admin ,'get_eagallery' );
+
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'eapp_menu_sections' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'eapp_update_access_key' );
+		//$this->loader->add_action( 'admin_init', $plugin_admin, 'eapp_update_access_key' );
+
+
 
 
 	}
@@ -179,7 +188,11 @@ class Easycubes_App {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+
+
 	}
+
+
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

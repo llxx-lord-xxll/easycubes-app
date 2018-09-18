@@ -36,42 +36,19 @@ class Easycubes_App_Deactivator {
 
     public static function EasyCubesApp_DropTables()
     {
+        require_once EASYCUBES_APP_PLUGIN_DIR . "includes/class-easycubes-app-tables.php";
+
+
         global $wpdb;
-        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_table());
-        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_meta_table());
-        $wpdb->query("Drop table if exists " . self::EasyCubesApp_articles_tabs_table());
-        $wpdb->query("Drop table if exists " . self::EasyCubesApp_folders_table());
-        $wpdb->query("Drop table if exists " . self::EasyCubesApp_galleries_table());
+        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_table());
+        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_meta_table());
+        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::articles_tabs_table());
+        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::folders_table());
+        $wpdb->query("Drop table if exists " . Easycubes_App_Tables::galleries_table());
+
+
+
     }
 
-    public static function EasyCubesApp_articles_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles';
-    }
-
-    public static function EasyCubesApp_articles_meta_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles_meta';
-    }
-
-    public static function EasyCubesApp_articles_tabs_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_articles_tabs';
-    }
-
-    public static function EasyCubesApp_folders_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_folders';
-    }
-
-    public static function EasyCubesApp_galleries_table()
-    {
-        global $wpdb;
-        return $wpdb->prefix . 'easycubes_app_galleries';
-    }
 
 }

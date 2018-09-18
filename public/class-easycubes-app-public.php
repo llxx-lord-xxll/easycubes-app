@@ -54,6 +54,7 @@ class Easycubes_App_Public {
 
 	}
 
+
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *

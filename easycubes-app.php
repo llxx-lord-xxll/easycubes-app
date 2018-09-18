@@ -83,10 +83,13 @@ require plugin_dir_path(__FILE__) . 'includes/class-easycubes-app.php';
  *
  * @since    1.0.0
  */
+
+
 function run_easycubes_app() {
 
     $plugin = new Easycubes_App();
     $plugin->run();
 
 }
+
 run_easycubes_app();
