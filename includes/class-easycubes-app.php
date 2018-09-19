@@ -188,9 +188,15 @@ class Easycubes_App {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+		$this->loader->add_filter( 'page_template', $plugin_public, 'define_page_template' );
+
+		add_shortcode('easycubes_app_partner_generate',array($plugin_public,"easycubes_app_partner_generate"));
+
+
 
 
 	}
+
 
 
 

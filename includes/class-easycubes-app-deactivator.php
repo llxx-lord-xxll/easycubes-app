@@ -30,8 +30,13 @@ class Easycubes_App_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+        self::delete_public_page();
 	}
 
+	public static function delete_public_page()
+    {
+        $page_id =get_option("easycubes_app_page");
+        wp_delete_post($page_id,true);
+    }
 
 }

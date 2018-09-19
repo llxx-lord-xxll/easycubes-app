@@ -101,4 +101,25 @@ class Easycubes_App_Public {
 
 	}
 
+	public function define_page_template()
+    {
+
+        $post = get_post();
+        $app_page_id = get_option("easycubes_app_page");
+        if (!empty($app_page_id))
+        {
+            if ($app_page_id == $post->ID)
+            {
+                $page_template = EASYCUBES_APP_PLUGIN_DIR . "/public/partials/easycubes-app-public-display.php";
+
+            }
+        }
+        return $page_template;
+    }
+
+    public function easycubes_app_partner_generate()
+    {
+        return  "testing testing testing";
+    }
+
 }
