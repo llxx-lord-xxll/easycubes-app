@@ -71,6 +71,19 @@
             });
             return false;
         });
+
+        jQuery('#eagallery_add_url').click(function() {
+            var input_url = prompt("Input media url");
+            if (input_url ==null || input_url === "")
+            {
+
+            }
+            else
+            {
+                $("#eagallery_image_paths").append('<div class="form-group"> <input type="text" class="form-control" name="eagallery_media[]" value="'+input_url+'"/> <span class="dashicons dashicons-trash eagallery-media-close"></span> </div>')
+            }
+        });
+
         jQuery(document).on('click','.eagallery-media-close',function() {
 			$(this).parent().remove();
         });

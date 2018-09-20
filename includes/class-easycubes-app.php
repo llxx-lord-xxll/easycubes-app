@@ -192,6 +192,12 @@ class Easycubes_App {
 
 		add_shortcode('easycubes_app_partner_generate',array($plugin_public,"easycubes_app_partner_generate"));
 
+        $this->loader->add_action( 'wp_ajax_nopriv_get_eaarticle', $plugin_public ,'get_eaarticle' );
+        $this->loader->add_action( 'wp_ajax_get_eaarticle', $plugin_public ,'get_eaarticle' );
+
+        $this->loader->add_action( 'wp_ajax_get_eagallery_contents', $plugin_public ,'get_eagallery_contents' );
+        $this->loader->add_action( 'wp_ajax_nopriv_get_eagallery_contents', $plugin_public ,'get_eagallery_contents' );
+
 
 
 

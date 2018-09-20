@@ -25,6 +25,14 @@ $eafolders = get_terms( array(
 
     <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/normalize.css">
+
+    <!-- Media Boxes CSS -->
+    <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Font%20Awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific%20Popup/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/mediaBoxes.css">
+    <!-- Media Boxes CSS -->
+
     <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/easycubes-app-public.css">
 
 </head>
@@ -151,10 +159,13 @@ $eafolders = get_terms( array(
                                     'hide_empty' => false,
                                     'parent' => $t_id_l2));
 
+                                ?>
+                                <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane">
+                    <?php
                                 if (!empty($eafolders_l3)) {
 
                             ?>
-                                <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane">
+
                                     <ul class="nav nav-tabs">
                                         <?php
                                             foreach ($eafolders_l3 as $eafolder_l3)
@@ -184,7 +195,7 @@ $eafolders = get_terms( array(
 
                                                             while ($the_query->have_posts()) {
                                                                 ?>
-                                                                <li><a href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
+                                                                <li><a class="eaarticles" href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
                                                                 <?php
                                                                 $the_query->the_post();
                                                             }
@@ -215,7 +226,7 @@ $eafolders = get_terms( array(
                                             <?php
                                                 while ($the_query->have_posts()) {
                                                     ?>
-                                                    <li><a href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
+                                                    <li><a class="eaarticles" href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
                                                     <?php
                                                     $the_query->the_post();
                                                 }
@@ -226,9 +237,12 @@ $eafolders = get_terms( array(
 
                                         ?>
                                     </ul>
-                                </div>
+
                 <?php
                                 }
+                                ?>
+                                </div>
+                <?php
                             }
                         }
                     }
@@ -343,6 +357,9 @@ $eafolders = get_terms( array(
 
 
 
+<?php
+do_shortcode('[easycubes_app_partner_generate]');
+?>
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -351,6 +368,22 @@ $eafolders = get_terms( array(
 <script type="text/javascript" src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/bootstrap.js"></script>
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/plugins.js"></script>
+
+<!-- Media Boxes SCRIPTS -->
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Isotope/jquery.isotope.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Transit/jquery.transit.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/jQuery Easing/jquery.easing.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Waypoints/waypoints.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Modernizr/modernizr.custom.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific Popup/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.dropdown.js"></script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.js"></script>
+<!-- Media Boxes SCRIPTS -->
+
+
+
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

@@ -225,6 +225,7 @@ class Easycubes_App_Admin {
 
                     </div>
                     <input type="button" value="Add media" class="button-primary" id="eagallery_upload_image"/>
+                    <input type="button" value="Add media url" class="button-primary" id="eagallery_add_url"/>
                     <br />
                     <span class="description"><?php _e('Add images or videos '); ?></span>
                 </td>
