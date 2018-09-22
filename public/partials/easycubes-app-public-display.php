@@ -294,16 +294,9 @@ $eafolders = get_terms( array(
 
                 </div>
 
-                <div id="action-ebook" class="action col-lg-6" style="display: none">
-                    <a href="#" data-toggle="modal" data-target="#page"><span class="glyphicon glyphicon-file"></span>Download Page</a>
-                    <a href="#" data-toggle="modal" data-target="#buy"><span class="glyphicon glyphicon-shopping-cart"></span>Buy Items</a>
-                    <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
-                    <a href="##" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
-                </div>
-
-                <div id="action-gallery" class="action col-lg-6" >
-                    <a href="#" data-toggle="modal" data-target="#preview"><span class="glyphicon glyphicon-file"></span>Download Preview</a>
-                    <a href="#" data-toggle="modal" data-target="#source"><span class="glyphicon glyphicon-download"></span>Download Source</a>
+                <div id="action-ebook" class="action col-lg-6">
+                    <a href="#" data-target="#preview"><span class="glyphicon glyphicon-file"></span>Download Preview</a>
+                    <a href="#"  data-target="#source"><span class="glyphicon glyphicon-shopping-cart"></span>Download Source</a>
                     <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
                     <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
                 </div>
@@ -312,12 +305,9 @@ $eafolders = get_terms( array(
 
 
             <div class="media_area">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs"> </ul>
 
-                </ul>
-
-                <div class="tab-content">
-                </div>
+                <div class="tab-content"> </div>
 
             </div>
 
@@ -335,16 +325,146 @@ $eafolders = get_terms( array(
 
 <!-- Modals -->
 
-<div id="preview" class="modal fade" role="dialog">
+<div id="share" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" style="text-align-last: center">Register</h4>
+                <h4 class="modal-title" style="text-align-last: center">Share</h4>
             </div>
             <div class="modal-body">
+                <form id="contact-form" method="post" action="contact.php" role="form">
 
+                    <div class="messages"></div>
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Firstname *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Lastname *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">From *</label>
+                                    <input id="form_email" type="email" name="emailFrom" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">To *</label>
+                                    <input id="form_email" type="email" name="emailTo" class="form-control" placeholder="Please enter recipient email *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="Have a look at this awesome product from Easycubes... " rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-send" value="Send message">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-muted">
+                                    Marked with <strong>*</strong>  fields are required, current page's link is already attached.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="ask" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align-last: center">Ask us</h4>
+            </div>
+            <div class="modal-body">
+                <form id="contact-form" method="post" action="contact.php" role="form">
+
+                    <div class="messages"></div>
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Firstname *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Lastname *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_email">From *</label>
+                                    <input id="form_email" type="email" name="emailFrom" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message </label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="I have a question about this product..." rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-send" value="Send message">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-muted">
+                                    Marked with <strong>*</strong>  fields are required, current page's link is already attached.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
             </div>
 
         </div>
@@ -365,6 +485,8 @@ do_shortcode('[easycubes_app_partner_generate]');
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/bootstrap.js"></script>
+
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/loadingoverlay.min.js"></script>
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/plugins.js"></script>
 
@@ -391,6 +513,16 @@ do_shortcode('[easycubes_app_partner_generate]');
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+
+<div class="loadingoverlayFake" style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
+    <div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" style="width: 100%; height: 100%; fill: rgb(32, 32, 32);"><circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle></svg></div>
+</div>
+<div class="loadingoverlayFake" style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
+    <div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" style="width: 100%; height: 100%; fill: rgb(32, 32, 32);"><circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle></svg></div>
+</div>
+
 </body>
 
 </html>

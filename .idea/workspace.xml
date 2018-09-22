@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40fdb26f-ec0e-48ae-819e-b2bcadc06ab1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/vendor/loadingoverlay.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/js/easycubes-app-admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/js/easycubes-app-admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/easycubes-app-public.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/easycubes-app-public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/partials/easycubes-app-public-display.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/partials/easycubes-app-public-display.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,39 +21,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="class-easycubes-app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
+      <file leaf-file-name="easycubes-app-public-display.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/partials/easycubes-app-public-display.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="196" selection-start-line="196" selection-end-line="196" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-easycubes-app-admin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="459" column="149" selection-start-line="459" selection-start-column="145" selection-end-line="459" selection-end-column="149" />
+            <state relative-caret-position="17">
+              <caret line="389" column="37" selection-start-line="389" selection-start-column="36" selection-end-line="389" selection-end-column="37" />
               <folding>
-                <element signature="n#display_eagallery_images#0;n#Easycubes_App_Admin#0;n#!!top" />
-                <element signature="n#display_ea_folders_img#0;n#Easycubes_App_Admin#0;n#!!top" />
-                <element signature="n#display_ea_article_detals#0;n#Easycubes_App_Admin#0;n#!!top" />
-                <element signature="e#21244#22602#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="easycubes-app-admin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/js/easycubes-app-admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="162" column="70" selection-start-line="162" selection-start-column="70" selection-end-line="162" selection-end-column="70" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#0;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#1;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#2;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#3;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#4;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#5;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#6;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#7;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#0;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#1;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#2;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#3;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#4;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#5;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#6;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#circle#7;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +59,37 @@
       <file leaf-file-name="easycubes-app-public.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/easycubes-app-public.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="207">
+              <caret line="182" column="16" lean-forward="true" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
+              <folding>
+                <element signature="e#2519#5575#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class-easycubes-app-admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4777">
+              <caret line="404" column="33" lean-forward="true" selection-start-line="404" selection-start-column="33" selection-end-line="404" selection-end-column="33" />
+              <folding>
+                <element signature="n#display_eagallery_images#0;n#Easycubes_App_Admin#0;n#!!top" />
+                <element signature="n#display_ea_folders_img#0;n#Easycubes_App_Admin#0;n#!!top" />
+                <element signature="n#display_ea_article_detals#0;n#Easycubes_App_Admin#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class-easycubes-app-public.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/class-easycubes-app-public.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="162" column="47" lean-forward="true" selection-start-line="162" selection-start-column="47" selection-end-line="162" selection-end-column="47" />
+              <folding>
+                <element signature="e#7#211#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +119,7 @@
       <find>input</find>
       <find>inpu</find>
       <find>prompt</find>
+      <find>#action-ebook</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -140,11 +169,11 @@
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/includes/class-easycubes-app.php" />
         <option value="$PROJECT_DIR$/public/class-easycubes-app-public.php" />
-        <option value="$PROJECT_DIR$/public/js/easycubes-app-public.js" />
         <option value="$PROJECT_DIR$/public/css/easycubes-app-public.css" />
-        <option value="$PROJECT_DIR$/public/partials/easycubes-app-public-display.php" />
-        <option value="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" />
         <option value="$PROJECT_DIR$/admin/js/easycubes-app-admin.js" />
+        <option value="$PROJECT_DIR$/admin/class-easycubes-app-admin.php" />
+        <option value="$PROJECT_DIR$/public/js/easycubes-app-public.js" />
+        <option value="$PROJECT_DIR$/public/partials/easycubes-app-public-display.php" />
       </list>
     </option>
   </component>
@@ -202,6 +231,11 @@
             <path>
               <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -209,6 +243,19 @@
               <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easycubes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="easycubes-app" type="b2602c69:ProjectViewProjectNode" />
@@ -233,11 +280,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\public\js\vendor" />
       <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\public\js" />
       <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\public" />
       <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\public\css" />
       <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\public\images" />
-      <recent name="C:\Users\zpran\PhpstormProjects\easycubes-app\admin\partials" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -282,7 +329,7 @@
       <workItem from="1537417878959" duration="17340000" />
       <workItem from="1537507889551" duration="5759000" />
       <workItem from="1537563608992" duration="2629000" />
-      <workItem from="1537598745977" duration="5157000" />
+      <workItem from="1537598745977" duration="15541000" />
     </task>
     <task id="LOCAL-00001" summary="Framework &amp; Working Environment Setup">
       <created>1535964607330</created>
@@ -347,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537608536629</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add URL button for Articles Tab">
+      <created>1537615974242</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1537615974242</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149795000" />
+    <option name="totallyTimeSpent" value="160179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -396,19 +450,13 @@
     <MESSAGE value="Delete Table Creation and Deletion on Activate and Deactivate Plugin" />
     <MESSAGE value="Gallery Grid and PDF Viewer" />
     <MESSAGE value="Fixing Gallery Grid&#10;Fixing Article Listing&#10;Adding Bootstrap Toggle Button Scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing Gallery Grid&#10;Fixing Article Listing&#10;Adding Bootstrap Toggle Button Scripts" />
+    <MESSAGE value="Add URL button for Articles Tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add URL button for Articles Tab" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>C:\inetpub\wwwroot\easycubesapp</wordpressPath>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app-activator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/easycubes-app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -648,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/class-easycubes-app-public.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
-          <folding>
-            <element signature="e#7#211#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/easycubes-app-public.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -665,28 +703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/easycubes-app-public-display.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="292" column="26" lean-forward="true" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
-          <folding>
-            <element signature="e#9717#10254#1#PHP" />
-            <element signature="e#14588#14595#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/class-easycubes-app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="196" selection-start-line="196" selection-end-line="196" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/easycubes-app-public.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -702,15 +722,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/vendor/loadingoverlay.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="7" column="1205" lean-forward="true" selection-start-line="7" selection-start-column="1205" selection-end-line="7" selection-end-column="1205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/easycubes-app-public.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="182" column="16" lean-forward="true" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
+          <folding>
+            <element signature="e#2519#5575#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/class-easycubes-app-admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="459" column="149" selection-start-line="459" selection-start-column="145" selection-end-line="459" selection-end-column="149" />
+        <state relative-caret-position="4777">
+          <caret line="404" column="33" lean-forward="true" selection-start-line="404" selection-start-column="33" selection-end-line="404" selection-end-column="33" />
           <folding>
             <element signature="n#display_eagallery_images#0;n#Easycubes_App_Admin#0;n#!!top" />
             <element signature="n#display_ea_folders_img#0;n#Easycubes_App_Admin#0;n#!!top" />
             <element signature="n#display_ea_article_detals#0;n#Easycubes_App_Admin#0;n#!!top" />
-            <element signature="e#21244#22602#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/class-easycubes-app-public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="162" column="47" lean-forward="true" selection-start-line="162" selection-start-column="47" selection-end-line="162" selection-end-column="47" />
+          <folding>
+            <element signature="e#7#211#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partials/easycubes-app-public-display.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="389" column="37" selection-start-line="389" selection-start-column="36" selection-end-line="389" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#2;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#3;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#4;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#5;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#6;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#7;n#svg#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#2;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#3;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#4;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#5;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#6;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#7;n#svg#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

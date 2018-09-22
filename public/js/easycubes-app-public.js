@@ -52,6 +52,7 @@
 
     $(".eaarticles").on('click',function (e) {
         e.preventDefault();
+        $.LoadingOverlay("show");
         var data = {
             action: "get_eaarticle",
 			url: $(this).attr('href')
@@ -69,14 +70,14 @@
             var tab_menu_items = "";
             var tab_menu_contents = "";
 			$.each(tabs,function (key,item) {
-                tab_menu_items += '<li><a data-toggle="tab" href="#tab_'+item['id']+'">'+item['title']+'</a></li>';
+                tab_menu_items += '<li data-dpage="'+item['dpage']+'" data-durl="'+item['durl']+'" data-type="'+item['type']+'"><a data-toggle="tab" href="#tab_'+item['id']+'">'+item['title']+'</a></li>';
             });
             $.each(tabs,function (key,item) {
 
                 if (item['type'] === "pdf")
 				{
                     tab_menu_contents += '<div id="tab_'+item['id']+'" class="tab-pane fade">';
-					tab_menu_contents += '<iframe height="100" frameborder="0" src="https://docs.google.com/viewer?url='+item['content']+'&embedded=true"></iframe>';
+                    tab_menu_contents += '<iframe height="100" frameborder="0" src="https://docs.google.com/viewer?url='+item['content']+'&embedded=true"></iframe>';
                     tab_menu_contents += '</div>';
 				}
 				else
@@ -141,10 +142,70 @@
             });
 			$('.media_area .nav-tabs').html(tab_menu_items);
 			$('.media_area .tab-content').html(tab_menu_contents);
+            $.LoadingOverlay("hide");
+
+            $('.media_area .nav-tabs li:first a').click();
+
 
             //console.log(json['post_title']);
         });
     });
 
+    $("#action-ebook a").on('click',function (e) {
+
+
+        switch ($(this).attr('data-target').replace("#",""))
+        {
+            case 'preview':
+                e.preventDefault();
+                var target =  $('.media_area .nav-tabs li.active');
+               if (target.length)
+               {
+                   window.open(target.attr('data-dpage'),'_blank');
+               }
+                break;
+            case 'source':
+                e.preventDefault();
+                var target =  $('.media_area .nav-tabs li.active');
+                if (target.length)
+                {
+                    window.open(target.attr('data-durl'),'_blank');
+                }
+                break;
+        }
+    });
+
+
+    $(window).on('load',function () {
+
+        setTimeout(function () {
+            $(".loadingoverlayFake").remove();
+        },2000);
+        var query = window.location.href.substring(window.location.href.indexOf("#")+1);
+
+        if (query!==window.location.href)
+        {
+           $('.navigation .tab-content:last .tab-pane ul li a').each(function (key,item) {
+                var postid = $(item).attr('href').substring(1);
+                if (query === postid)
+                {
+                    var tab3 = $(item).parent().parent().parent();
+                    var tab2Selector = $('.navigation .tab-content:first .tab-pane ul li a[href$="#'+tab3.attr('id')+'"]').first();
+                    var tab2 = $(tab2Selector).parent().parent().parent();
+                    var tab1Selector = $('#interest_tabs li a[href$="#'+tab2.attr('id')+'"]').first();
+                    tab1Selector.click();
+                    tab2Selector.click();
+                    $(item).click();
+
+                }
+           });
+
+        }
+        else
+        {
+            $('.navigation .tab-content:last .tab-pane.active ul li a:first').click();
+
+        }
+    });
 
 })( jQuery );

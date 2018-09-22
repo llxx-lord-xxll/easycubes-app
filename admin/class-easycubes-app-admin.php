@@ -405,6 +405,7 @@ class Easycubes_App_Admin {
                                 {
                                  ?>
                                     <button type="button" class="btn btn-primary ea_articles_tab_content_upload" id="eaarticles_tab<?php echo $i; ?>_upload">Upload PDF</button>
+                                    <button type="button" class="btn btn-primary ea_articles_tab_content_url" id="eaarticles_tab<?php echo $i; ?>_url">Insert URL</button>
                                     <?php
                                     if (!empty($tab_val))
                                     {
