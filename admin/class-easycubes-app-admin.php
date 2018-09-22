@@ -430,7 +430,7 @@ class Easycubes_App_Admin {
                                     <input class="ea_articles_tab_content" id="eaarticles_tab<?php echo $i;?>_val" name="eaarticles_tab<?php echo $i;?>_val" type="hidden"  value="<?php echo $tab_val; ?>">
                                     <?php
                                 }
-                                else
+                                elseif ($tab_type=="gallery")
                                 {
                                     ?>
                                     <select class="form-control ea_articles_tab_content" id="eaarticles_tab<?php echo $i;?>_val" name="eaarticles_tab<?php echo $i;?>_val">
@@ -451,6 +451,36 @@ class Easycubes_App_Admin {
                                     </select>
 
 
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <button type="button" class="btn btn-primary ea_articles_tab_content_upload" id="eaarticles_tab<?php echo $i; ?>_upload">Upload PDF</button>
+                                    <button type="button" class="btn btn-primary ea_articles_tab_content_url" id="eaarticles_tab<?php echo $i; ?>_url">Insert URL</button>
+                                    <?php
+                                    if (!empty($tab_val))
+                                    {
+                                        $tab_val_url = parse_url($tab_val, PHP_URL_PATH);
+                                        $tab_val_fname = basename($tab_val_url);
+                                        ?>
+                                        <div id="eaarticles_tab<?php echo $i; ?>_preview" style="padding: 20px">
+                                            <span style="font-size: 50px" class="dashicons dashicons-book"></span>
+                                            <a target="_blank" href="<?php echo $tab_val;?>" style="padding-top:28px; display:block; "><?php echo  $tab_val_fname ?></a>
+                                        </div>
+                                        <?php
+                                    }
+                                    else
+                                    {
+                                        ?>
+                                        <div id="eaarticles_tab<?php echo $i; ?>_preview" style="padding: 20px;display: none;">
+                                            <span style="font-size: 50px" class="dashicons dashicons-book"></span>
+                                            <a target="_blank" href="#" style="padding-top:28px; display:block; "></a>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                    <input class="ea_articles_tab_content" id="eaarticles_tab<?php echo $i;?>_val" name="eaarticles_tab<?php echo $i;?>_val" type="hidden"  value="<?php echo $tab_val; ?>">
                                     <?php
                                 }
                                 ?>
