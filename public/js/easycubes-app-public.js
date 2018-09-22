@@ -93,8 +93,23 @@
                         tab_menu_contents += '<div id="grid_'+item['id']+'">';
                         $.each(response2,function (key,obj) {
                             var fname = obj.substring(obj.lastIndexOf('/')+1);
+                            var domain = obj.replace('http://','').replace('https://','').split(/[/?#]/)[0];
                             tab_menu_contents += '<div class="media-box category1"> <div class="media-box-image">';
-                            tab_menu_contents += '<div data-thumbnail="'+obj+'"></div>';
+                            switch (domain)
+                            {
+                                case 'www.youtube.com':
+                                   var ytID = obj.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+                                    tab_menu_contents += '<div data-thumbnail="http://img.youtube.com/vi/'+ytID+'/0.jpg"></div>';
+                                    break;
+                                default:
+                                    tab_menu_contents += '<div data-thumbnail="'+obj+'"></div>';
+                                    break;
+                            }
+                            //console.log(domain);
+
+
+
+                            tab_menu_contents += '<div class="thumbnail-overlay"> <i class="fa fa-plus mb-open-popup" data-src="'+obj+'"></i> </div>';
                             tab_menu_contents += '</div></div>';
                         });
                         tab_menu_contents += '</div>';
@@ -107,12 +122,15 @@
                         setTimeout(
                             function()
                             {
-                                $('#grid_' + item['id']).mediaBoxes();
+                                var randX = $('#grid_' + item['id']).mediaBoxes({lazyLoad:false});
+                                randX.refresh();
+                                setTimeout(
+                                    function()
+                                    {
+                                        $('#grid_' + item['id']).mediaBoxes().refresh();
+                                    }, 1000);
                                 //do something special
-                            }, 1000);
-
-
-
+                            }, 2000);
 
 
                     });

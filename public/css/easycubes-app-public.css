@@ -461,6 +461,8 @@ textarea {
 .navigation .nav-pills  li{
     width: 49%;
     padding-top: 10px;
+    height: 110px;
+
 }
 
 .navigation .nav-tabs{

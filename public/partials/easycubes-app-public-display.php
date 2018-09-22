@@ -81,13 +81,12 @@ $eafolders = get_terms( array(
                 ?>
             </ul>
 
-            <!--top level tab content-->
+            <!--2ND Tab menu-->
             <div class="tab-content">
                 <!--all tab menu-->
 
                 <?php
-                if (!empty($eafolders))
-                {
+                if (!empty($eafolders)){
                     $bf = true;
                     foreach ($eafolders as $eafolder)
                     {
@@ -98,12 +97,15 @@ $eafolders = get_terms( array(
                             'parent' => $t_id
                         ));
 
+                        ?>
+                        <div id="tab_<?php echo $t_id; ?>" class="<?php if ($bf) {
+                            echo "active";
+                            $bf = false;
+                        } ?> tab-pane">
+                        <?php
                         if (!empty($eafolders_l2)) {
                             ?>
-                            <div id="tab_<?php echo $t_id; ?>" class="<?php if ($bf) {
-                                echo "active";
-                                $bf = false;
-                            } ?> tab-pane">
+
                                 <ul class="nav nav-tabs">
 
                                     <?php
@@ -124,11 +126,14 @@ $eafolders = get_terms( array(
                             }
                                     ?>
                                 </ul>
-                            </div>
+
 
 
                             <?php
                         }
+                        ?>
+                        </div>
+                <?php
                     }
                 }
                 ?>
@@ -136,11 +141,12 @@ $eafolders = get_terms( array(
 
             </div>
 
-            <!--top level tab content-->
+            <!-- 3RD Tab menu -->
             <div class="tab-content">
                 <!--all tab menu-->
                 <?php
                 if (!empty($eafolders)) {
+                    $bf = true;
                     foreach ($eafolders as $eafolder)
                     {
                         $t_id = $eafolder->term_id;
@@ -160,7 +166,7 @@ $eafolders = get_terms( array(
                                     'parent' => $t_id_l2));
 
                                 ?>
-                                <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane">
+                                <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane <?php if ($bf){echo "active"; $bf=false;} ?>">
                     <?php
                                 if (!empty($eafolders_l3)) {
 
@@ -194,10 +200,11 @@ $eafolders = get_terms( array(
                                                         if ($the_query->have_posts()) {
 
                                                             while ($the_query->have_posts()) {
+                                                                $the_query->the_post();
                                                                 ?>
                                                                 <li><a class="eaarticles" href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
                                                                 <?php
-                                                                $the_query->the_post();
+
                                                             }
                                                         }
                                                     ?>
@@ -205,41 +212,48 @@ $eafolders = get_terms( array(
                                                 <?php
                                             }
 
-                                        $the_query = new WP_Query( array(
-                                            'post_type' => 'eaarticles',
-                                            'post_status' => 'publish',
-                                            'tax_query' => array(
-                                                array(
-                                                    'taxonomy' => 'eafolders',
-                                                    'field' => 'id',
-                                                    'terms' => $t_id_l2,
-                                                    'include_children' => false,
-                                                )
-                                            ),
-                                            'order'    => 'ASC'
-                                        ));
 
-                                    if ($the_query->have_posts()) {
-                                        ?>
-                                        <ul class="nav nav-pills">
-                                            <span>Others</span>
-                                            <?php
-                                                while ($the_query->have_posts()) {
-                                                    ?>
-                                                    <li><a class="eaarticles" href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
-                                                    <?php
-                                                    $the_query->the_post();
-                                                }
-                                            ?>
-                                        </ul>
-                                        <?php
-                                    }
+
+
 
                                         ?>
                                     </ul>
 
                 <?php
                                 }
+                                    //Others
+                                    $the_query = new WP_Query( array(
+                                        'post_type' => 'eaarticles',
+                                        'post_status' => 'publish',
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'eafolders',
+                                                'field' => 'id',
+                                                'terms' => $t_id_l2,
+                                                'include_children' => false,
+                                            )
+                                        ),
+                                        'order'    => 'ASC'
+                                    ));
+
+                                    if ($the_query->have_posts()) {
+                                        ?>
+                                        <ul class="nav nav-pills">
+                                            <span>Others</span>
+                                            <?php
+                                            while ($the_query->have_posts()) {
+                                                $the_query->the_post();
+                                                ?>
+                                                <li><a class="eaarticles" href="#post_<?php echo $the_query->post->ID ;?>" data-toggle="tab"><img src="<?php echo get_the_post_thumbnail_url($the_query->post,'thumbnail') ?>"><p><?php echo $the_query->post->post_title; ?></p></a></li>
+                                                <?php
+
+                                            }
+                                            ?>
+                                        </ul>
+                                        <?php
+                                    }
+
+
                                 ?>
                                 </div>
                 <?php
@@ -267,15 +281,15 @@ $eafolders = get_terms( array(
 
                     <div class="col-lg-3">
                         <a href="#" class="title-logo">
-                            <img src="img/menu/marketing.png">
+                            <img src="img/menu/marketing.png" alt="">
                         </a>
                     </div>
                     <div class="col-lg-9">
                         <h2>
-                            Title
+
                         </h2>
-                        <span class="text-date">September 1, 2018</span>
-                        <p>Some text</p>
+                        <span class="text-date"></span>
+                        <p></p>
                     </div>
 
                 </div>
@@ -299,24 +313,10 @@ $eafolders = get_terms( array(
 
             <div class="media_area">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+
                 </ul>
 
                 <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-                        <h3>HOME</h3>
-                        <p>Some content.</p>
-                    </div>
-                    <div id="menu1" class="tab-pane fade">
-                        <h3>Menu 1</h3>
-                        <p>Some content in menu 1.</p>
-                    </div>
-                    <div id="menu2" class="tab-pane fade">
-                        <h3>Menu 2</h3>
-                        <p>Some content in menu 2.</p>
-                    </div>
                 </div>
 
             </div>
@@ -362,8 +362,7 @@ do_shortcode('[easycubes_app_partner_generate]');
 ?>
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/bootstrap.js"></script>
 
