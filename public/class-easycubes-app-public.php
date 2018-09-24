@@ -251,5 +251,43 @@ class Easycubes_App_Public {
         }
     }
 
+    public function partner_app_contact()
+    {
+        if (isset($_POST['from_email']) && isset($_POST['from_message']) && isset($_POST['url']))
+        {
+            $user_ip = $this->get_client_ip();
+
+            /*
+             *  Need to attach mailer
+             *
+             *
+             */
+
+        }
+        else
+        {
+            echo '<p class="text-danger">Error: The submitted data has some problem, please try again</p>';
+        }
+    }
+
+    private function get_client_ip() {
+        $ipaddress = '';
+        if (isset($_SERVER['HTTP_CLIENT_IP']))
+            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        else if(isset($_SERVER['HTTP_X_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        else if(isset($_SERVER['HTTP_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        else if(isset($_SERVER['REMOTE_ADDR']))
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+        else
+            $ipaddress = 'UNKNOWN';
+        return $ipaddress;
+    }
+
 
 }

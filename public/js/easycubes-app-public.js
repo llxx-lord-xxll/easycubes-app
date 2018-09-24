@@ -87,6 +87,7 @@
                         url: item['content']
                     };
 
+
                     jQuery.post(ajaxurl, fdata, function(response2) {
                         response2 = response2.substring(0, response2.length - 1);
                         response2 = JSON.parse(response2);
@@ -212,6 +213,33 @@
             $('.navigation .tab-content:last .tab-pane.active ul li a:first').click();
 
         }
+    });
+
+    $('#contact-form').on('submit',function (e) {
+        e.preventDefault();
+
+        $('#contact-form .messages').html("");
+        var from = $("#form_email").val();
+        var msg = $("#form_message").val();
+
+            var target = $('.navigation .tab-content:last .tab-pane ul li.active a:first');
+            target = location.protocol+'//'+ location.host + location.pathname +target.attr('href');
+
+            var fdata = {
+                action: "partner_app_contact",
+                from_email: from,
+                from_message: msg,
+                url: target
+            };
+
+            jQuery.post(ajaxurl, fdata, function(response) {
+                response = response.substring(0, response.length - 1);
+                $('#contact-form .messages').html(response);
+            });
+
+
+
+
     });
 
     $('.form-search').on('submit',function (e) {

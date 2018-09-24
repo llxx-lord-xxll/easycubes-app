@@ -165,6 +165,7 @@ class Easycubes_App {
         $this->loader->add_action( 'wp_ajax_modify_upload_dir', $plugin_admin ,'modify_upload_dir' );
         $this->loader->add_action( 'wp_ajax_get_eagallery', $plugin_admin ,'get_eagallery' );
 
+
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'eapp_menu_sections' );
 
 		//$this->loader->add_action( 'admin_init', $plugin_admin, 'eapp_update_access_key' );
@@ -200,6 +201,8 @@ class Easycubes_App {
 
         $this->loader->add_action( 'wp_ajax_nopriv_earticle_search', $plugin_public ,'earticle_search' );
         $this->loader->add_action( 'wp_ajax_earticle_search', $plugin_public ,'earticle_search' );
+        $this->loader->add_action( 'wp_ajax_partner_app_contact', $plugin_public ,'partner_app_contact' );
+        $this->loader->add_action( 'wp_ajax_nopriv_partner_app_contact', $plugin_public ,'partner_app_contact' );
 
 
 

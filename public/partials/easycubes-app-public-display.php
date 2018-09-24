@@ -430,7 +430,7 @@ $eafolders = get_terms( array(
                 <h4 class="modal-title" style="text-align-last: center">Ask us</h4>
             </div>
             <div class="modal-body">
-                <form id="contact-form" method="post" action="contact.php" role="form">
+                <form id="contact-form" method="post" action="" role="form">
 
                     <div class="messages"></div>
 
