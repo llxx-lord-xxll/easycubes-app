@@ -700,3 +700,34 @@ textarea {
     color: #23527c;
     text-decoration: none;
 }
+
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+
+.share-box{
+    padding: 15px;
+}
+
+.share-box-link{
+    padding: 6px;
+    display: inline-block;
+    width: 80%;
+    border-radius: 0;
+    border-right: 0;
+}
+
+.share-box-copy{
+    width: 19%;
+    display: inline-block;
+    height: 34px;
+    background: white;
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-radius: 0;
+    margin-left: -4px;
+}

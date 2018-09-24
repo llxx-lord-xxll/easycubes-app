@@ -172,6 +172,12 @@
                     window.open(target.attr('data-durl'),'_blank');
                 }
                 break;
+            case 'share':
+                $("#share-buttons a").attr('href',"#");
+                var target = $('.navigation .tab-content:last .tab-pane ul li.active a:first');
+                target = location.protocol+'//'+ location.host + location.pathname +target.attr('href');
+                $('.share-box-link').html(target);
+                break;
         }
     });
 
@@ -238,4 +244,66 @@
         $('.easearch > .container > .col-lg-12:last').html("");
     });
 
+    $('.share-box-copy').on('click',function (e) {
+        var containerid = 'share-box-link';
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select().createTextRange();
+            document.execCommand("copy");
+
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+        }
+        $(this).html("Copied!");
+        setTimeout(function () {
+            $('.share-box-copy').html("Copy");
+        },3000);
+
+    });
+
+    $("#share-buttons a").on('click',function (e) {
+
+        var target = $('.navigation .tab-content:last .tab-pane ul li.active a:first');
+        var title = target.find('p').html();
+
+        target = location.protocol+'//'+ location.host + location.pathname +target.attr('href');
+
+
+
+        switch ($(this).attr('class'))
+        {
+            case 'social-email':
+                $(this).attr('href','mailto:?Subject='+title+'&Body=' + escape('Have a look at this url '+ target));
+                break;
+            case 'social-fb':
+                $(this).attr('href','http://www.facebook.com/sharer.php?u=' + escape(target));
+                break;
+            case 'social-g':
+                $(this).attr('href','https://plus.google.com/share?url=' + escape(target));
+                break;
+            case 'social-li':
+                $(this).attr('href','http://www.linkedin.com/shareArticle?mini=true&amp;url=' + escape(target));
+                break;
+            case 'social-reddit':
+                $(this).attr('href','http://reddit.com/submit?url=' + escape(target) + '&amp;title=' + escape(title));
+                break;
+            case 'social-twitter':
+                $(this).attr('href','https://twitter.com/share?url=' + escape(target) + '&amp;text=' + escape(title) + '&amp;hashtags=simplesharebuttons');
+                break;
+            case 'social-vk':
+                $(this).attr('href','http://vkontakte.ru/share.php?url=' + escape(target));
+                break;
+
+        }
+    });
+
+
 })( jQuery );
+
+
+
+

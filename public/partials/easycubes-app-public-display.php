@@ -367,66 +367,54 @@ $eafolders = get_terms( array(
                 <h4 class="modal-title" style="text-align-last: center">Share</h4>
             </div>
             <div class="modal-body">
-                <form id="contact-form" method="post" action="contact.php" role="form">
 
-                    <div class="messages"></div>
-
-                    <div class="controls">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_email">From *</label>
-                                    <input id="form_email" type="email" name="emailFrom" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_email">To *</label>
-                                    <input id="form_email" type="email" name="emailTo" class="form-control" placeholder="Please enter recipient email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Have a look at this awesome product from Easycubes... " rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary btn-send" value="Send message">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-muted">
-                                    Marked with <strong>*</strong>  fields are required, current page's link is already attached.
-                                </p>
-                            </div>
-                        </div>
-
+                <div class="share-box form-group">
+                    <div class="share-box-link form-control" id="share-box-link">
+                        http://easycubesapp.lc/the-partner-page/
                     </div>
-                </form>
+                    <button class="form-control share-box-copy">Copy</button>
+                </div>
+
+                <div id="share-buttons">
+                    <!-- Email -->
+                    <a class="social-email" href="#">
+                        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+                    </a>
+
+                    <!-- Facebook -->
+                    <a class="social-fb" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                    </a>
+
+                    <!-- Google+ -->
+                    <a class="social-g" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a class="social-li" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                    </a>
+
+
+                    <!-- Reddit -->
+                    <a class="social-reddit" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+                    </a>
+
+
+                    <!-- Twitter -->
+                    <a class="social-twitter" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                    </a>
+
+                    <!-- VK -->
+                    <a class="social-vk" href="#" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+                    </a>
+
+
+                </div>
             </div>
 
         </div>
@@ -448,22 +436,6 @@ $eafolders = get_terms( array(
 
                     <div class="controls">
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
