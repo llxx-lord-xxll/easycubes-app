@@ -46,7 +46,7 @@ $eafolders = get_terms( array(
         <div class="pull-left">
             <form class="form-search">
                 <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                <input type="text" placeholder="Search">
+                <input autocomplete="off" name="query" type="text" placeholder="Search">
             </form>
         </div>
 
@@ -186,6 +186,7 @@ $eafolders = get_terms( array(
                                                         $the_query = new WP_Query( array(
                                                                 'post_type' => 'eaarticles',
                                                                 'post_status' => 'publish',
+                                                                'posts_per_page' => -1,
                                                                 'tax_query' => array(
                                                                         array(
                                                                             'taxonomy' => 'eafolders',
@@ -225,6 +226,7 @@ $eafolders = get_terms( array(
                                     $the_query = new WP_Query( array(
                                         'post_type' => 'eaarticles',
                                         'post_status' => 'publish',
+                                        'posts_per_page' => -1,
                                         'tax_query' => array(
                                             array(
                                                 'taxonomy' => 'eafolders',
@@ -276,6 +278,8 @@ $eafolders = get_terms( array(
 
 
         <div class="col-lg-8 content">
+
+
             <div class="title_action_bar">
                 <div class="title col-lg-6">
 
@@ -307,7 +311,9 @@ $eafolders = get_terms( array(
             <div class="media_area">
                 <ul class="nav nav-tabs"> </ul>
 
-                <div class="tab-content"> </div>
+                <div class="tab-content">
+
+                </div>
 
             </div>
 
@@ -315,8 +321,35 @@ $eafolders = get_terms( array(
     </div>
 
 
+    <div class="easearch">
+        <div class="container" style="height: 100%;">
+            <div class="pull-right" style="padding-top:5px ">
+                <a class="btn-remove-search" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+            <h2 class="col-lg-12" style="color: white">
+                Search results
+            </h2>
 
+            <div class="col-lg-12" style="background: white;height: 80%;overflow-x: hidden;overflow-y: scroll;">
 
+                <div class="search-item">
+                    <h3 class="search-item-title"><a href="#">Search Title</a> </h3>
+                    <span class="search-item-nav"> vaa vaa > aaf</span>
+                    <p class="search-item-desc">ASLDK FJHALSDKJFH ALKDSJFH ALKSDJHFALSK DJHFALKSDJFHASLKDF</p>
+                    <span class="search-item-tags"> vuua, test, adf</span>
+                </div>
+
+                <div class="search-item">
+                    <h3 class="search-item-title"><a href="#">Search Title</a> </h3>
+                    <cite class="search-item-nav"> vaa vaa > aaf</cite>
+                    <p class="search-item-desc">ASLDK FJHALSDKJFH ALKDSJFH ALKSDJHFALSK DJHFALKSDJFHASLKDF</p>
+                    <span class="search-item-tags">Tags: <span>vuua, test, adf</span></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 
 </section>
@@ -393,7 +426,6 @@ $eafolders = get_terms( array(
                         </div>
 
                     </div>
-
                 </form>
             </div>
 
@@ -522,6 +554,8 @@ do_shortcode('[easycubes_app_partner_generate]');
 <div class="loadingoverlayFake" style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
     <div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" style="width: 100%; height: 100%; fill: rgb(32, 32, 32);"><circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle><circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle></svg></div>
 </div>
+
+
 
 </body>
 

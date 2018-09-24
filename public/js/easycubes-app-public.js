@@ -208,4 +208,34 @@
         }
     });
 
+    $('.form-search').on('submit',function (e) {
+        e.preventDefault();
+        if ($(this).find('input').first().val() !== "")
+        {
+            $.LoadingOverlay("show");
+            var data = {
+                action: "earticle_search",
+                qry: $(this).find('input').first().val()
+            };
+
+            jQuery.post(ajaxurl, data, function(response) {
+                $.LoadingOverlay("hide");
+                response = response.substring(0, response.length - 1);
+                var searchContainer = $('.easearch > .container > .col-lg-12:last');
+                searchContainer.html(response);
+                $('.easearch').show();
+            });
+
+        }
+        else
+        {
+            alert("Search query is empty ! ");
+        }
+    });
+    $('.btn-remove-search').on('click',function (e) {
+        e.preventDefault();
+        $('.easearch').hide();
+        $('.easearch > .container > .col-lg-12:last').html("");
+    });
+
 })( jQuery );

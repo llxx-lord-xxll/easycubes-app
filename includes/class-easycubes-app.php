@@ -198,6 +198,9 @@ class Easycubes_App {
         $this->loader->add_action( 'wp_ajax_get_eagallery_contents', $plugin_public ,'get_eagallery_contents' );
         $this->loader->add_action( 'wp_ajax_nopriv_get_eagallery_contents', $plugin_public ,'get_eagallery_contents' );
 
+        $this->loader->add_action( 'wp_ajax_nopriv_earticle_search', $plugin_public ,'earticle_search' );
+        $this->loader->add_action( 'wp_ajax_earticle_search', $plugin_public ,'earticle_search' );
+
 
 
 

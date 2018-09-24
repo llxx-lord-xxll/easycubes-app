@@ -311,6 +311,11 @@ textarea {
     width: 170px;
 }
 
+.form-search input:focus
+{
+    outline: none;
+}
+
 .form-search input, .form-search button {
     background-color:transparent;
     border:0;
@@ -607,4 +612,91 @@ textarea {
 .modal-title{
     color: #f7f7f7;
     text-align-last: left !important;
+}
+
+.easearch
+{
+    box-sizing: border-box;
+    position: fixed;
+    display: none;
+    background: rgb(68, 114, 196);
+    top: 79px;
+    left: 0px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    z-index: 2147483647;
+    opacity: 1;
+}
+
+.easearch .search-item{
+
+}
+
+.easearch .search-item .search-item-title{
+    color: rgb(34, 34, 34);
+    display: block;
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    height: 21.6px;
+    line-height: 21.6px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.easearch .search-item .search-item-title a{
+    color: rgb(26, 13, 171);
+    cursor: pointer;
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    text-decoration-color: rgb(26, 13, 171);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    white-space: nowrap;
+}
+
+.easearch .search-item .search-item-nav{
+    color: rgb(0, 102, 33);
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    line-height: 16px;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+}
+
+.easearch .search-item .search-item-desc{
+    color:            rgb(84, 84, 84);
+    font-family:            arial, sans-serif;
+    font-size:            13px;
+    font-weight:            400;
+    height:            auto;
+    line-height:            18.2px;
+    overflow-wrap:            break-word;
+    text-align:            left;
+    width:            auto;
+    margin: 0;
+}
+
+.easearch .search-item .search-item-tags{
+    color: #949494;
+    display: block;
+    font-size: 13px;
+}
+.easearch .search-item .search-item-tags span{
+    font-style: italic;
+}
+.btn-remove-search
+{
+    color: #23527c;
+    text-decoration: none;
 }

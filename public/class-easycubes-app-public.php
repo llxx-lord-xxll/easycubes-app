@@ -192,4 +192,64 @@ class Easycubes_App_Public {
         }
 
     }
+    private function limit_text($text, $limit) {
+        if (str_word_count($text, 0) > $limit) {
+            $words = str_word_count($text, 2);
+            $pos = array_keys($words);
+            $text = substr($text, 0, $pos[$limit]) . '...';
+        }
+        return $text;
+    }
+
+    public function earticle_search()
+    {
+        if (isset($_POST['qry']))
+        {
+
+            $the_query = new WP_Query( array(
+                'post_type' => 'eaarticles',
+                'post_status' => 'publish',
+                'posts_per_page' => -1
+            ));
+
+
+            if( $the_query->have_posts() ) {
+                while( $the_query->have_posts() ){
+                    $the_query->the_post();
+                    $the_post = $the_query->post;
+                    $subtitle =  get_post_meta( $the_post->ID, 'eaarticles_subtitle', true ) ;
+                    $tags =  get_post_meta( $the_post->ID, 'eaarticles_tags', true ) ;
+                    $tabcount =  intval(get_post_meta( $the_post->ID, 'eaarticles_tabcount', true ));
+                    $searcher = false;
+                    for ($i=1;$i<=$tabcount; $i++) {
+                        $tab_title = get_post_meta( $the_post->ID, 'eaarticles_tab'. $i . "_title", true );
+                        if (strpos($tab_title, $_POST['qry']) !== false)
+                        {
+                            $searcher = true;
+                        }
+                    }
+
+                    if ((strpos($the_post->post_title, $_POST['qry']) !== false)  || (strpos($subtitle, $_POST['qry']) !== false) || (strpos($tags, $_POST['qry']) !== false) || ($searcher != false)) {
+                        $subtitle = $this->limit_text($subtitle,20);
+                        $ea_folder = get_the_terms( $the_post->ID, 'eafolders' );
+                        $navs = get_term_parents_list($ea_folder[0]->term_id,'eafolders',array('link'=>false));
+                        $navs = str_replace("/", " -> ", $navs);
+                        $navs = rtrim($navs," -> ");
+                        ?>
+                        <div class="search-item">
+                            <h3 class="search-item-title"><a href="#"><?php echo $the_post->post_title; ?></a> </h3>
+                            <span class="search-item-nav"> <?php echo $navs; ?></span>
+                            <p class="search-item-desc"><?php echo $subtitle; ?></p>
+                            <span class="search-item-tags">Tags: <span><?php echo $tags; ?></span></span>
+                        </div>
+
+<?php
+                    }
+
+                }
+            }
+        }
+    }
+
+
 }
