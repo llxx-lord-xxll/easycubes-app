@@ -165,6 +165,8 @@ class Easycubes_App {
         $this->loader->add_action( 'wp_ajax_modify_upload_dir', $plugin_admin ,'modify_upload_dir' );
         $this->loader->add_action( 'wp_ajax_get_eagallery', $plugin_admin ,'get_eagallery' );
 
+        $this->loader->add_action( 'admin_post_eapartner_app_backup', $plugin_admin ,'eapartner_app_backup' );
+
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'eapp_menu_sections' );
 

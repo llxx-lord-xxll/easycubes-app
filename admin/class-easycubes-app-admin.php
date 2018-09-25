@@ -58,10 +58,10 @@ class Easycubes_App_Admin {
     function wpdocs_codex_eaarticles_init() {
 
         $labels = array(
-            'name'                  => _x( 'Articles', 'Post type general name', 'textdomain' ),
-            'singular_name'         => _x( 'Article', 'Post type singular name', 'textdomain' ),
+            'name'                  => _x( 'Easycubes Partner App Articles', 'Post type general name', 'textdomain' ),
+            'singular_name'         => _x( 'Easycubes Partner App Article', 'Post type singular name', 'textdomain' ),
             'menu_name'             => _x( 'Easycubes App', 'Admin Menu text', 'textdomain' ),
-            'name_admin_bar'        => _x( 'Article', 'Add New on Toolbar', 'textdomain' ),
+            'name_admin_bar'        => _x( 'Easycubes Partner App Article', 'Add New on Toolbar', 'textdomain' ),
             'add_new'               => __( 'Add New', 'textdomain' ),
             'add_new_item'          => __( 'Add New Article', 'textdomain' ),
             'new_item'              => __( 'New Article', 'textdomain' ),
@@ -392,6 +392,7 @@ class Easycubes_App_Admin {
                             </div>
                             <div class="col-lg-6">
                                 <input class="form-control" id="eaarticles_tab<?php echo $i;?>_durl" name="eaarticles_tab<?php echo $i;?>_durl" type="text"  value="<?php echo  $tab_down_url ; ?>" >
+                                <button type="button" class="btn btn-primary pull-right ea_articles_tab_content_upload_getUrl">Upload</button>
                             </div>
                         </div>
                     </div>
@@ -402,6 +403,7 @@ class Easycubes_App_Admin {
                             </div>
                             <div class="col-lg-6">
                                 <input class="form-control" id="eaarticles_tab<?php echo $i;?>_dpage" name="eaarticles_tab<?php echo $i;?>_dpage" type="text"  value="<?php echo  $tab_down_page ; ?>">
+                                <button type="button" class="btn btn-primary pull-right ea_articles_tab_content_upload_getUrl">Upload</button>
                             </div>
                         </div>
                     </div>
@@ -468,7 +470,7 @@ class Easycubes_App_Admin {
                                                     foreach ( $galleries as $gallery ) {
                                                         ?>
 
-                                                        <option value="<?php echo $gallery->term_id; ?>"  <?php if ($tab_val==$gallery->term_id)echo "selected"?>><?php echo $gallery->name; ?></option>
+                                                        <option value="<?php echo $gallery->slug; ?>"  <?php if ($tab_val==$gallery->slug)echo "selected"?>><?php echo $gallery->name; ?></option>
                                                      <?php
                                                     }
                                                 }
@@ -653,5 +655,224 @@ class Easycubes_App_Admin {
         include_once EASYCUBES_APP_PLUGIN_DIR . "/admin/partials/easycubes-app-admin-manage.php";
     }
 
+    public function eapartner_app_backup()
+    {
+
+        $importer = array();
+
+        $wp_content_importer = array();
+        $wp_content_importer_counter = 0;
+
+        $eafolders = get_terms( array(
+            'taxonomy' => 'eafolders',
+            'order' => 'DESC',
+        ));
+
+        if (!empty($eafolders)){
+            $eafolders_array = array();
+            foreach ($eafolders as $eafolder)
+            {
+                $t_id = $eafolder->term_id;
+                $eafolder = (array) $eafolder;
+                $eafolder['img'] =  get_option( "eafolder_taxonomy_$t_id" . "_fimg");
+                if (!empty($eafolder['img']))
+                {
+                    $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$eafolder['img']);
+                }
+
+                $eafolder['img'] = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$eafolder['img']);
+
+                array_push($eafolders_array,$eafolder);
+            }
+            $importer['eafolders'] = $eafolders_array;
+        }
+
+
+        $eagalleries = get_terms( array(
+            'taxonomy' => 'eagallery',
+            'hide_empty' => false
+        ));
+
+
+        if (!empty($eagalleries)){
+            $eagalleries_array = array();
+            foreach ($eagalleries as $eagallery)
+            {
+                $t_id = $eagallery->term_id;
+                $eagallery = (array) $eagallery;
+                $eagallery['media'] =  get_option( "eagallery_taxonomy_$t_id" . "_media");
+
+                $medias = json_decode($eagallery['media']);
+
+                foreach ($medias as $key => $media)
+                {
+                    if (strpos($media, get_site_url().'/wp-content') !== false) {
+                        if (!empty($media))
+                        {
+                            $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$media);
+                            $medias[$key] = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$media);
+                        }
+                    }
+                }
+                $eagallery['media'] = $medias;
+
+                array_push($eagalleries_array,$eagallery);
+            }
+            $importer['eagalleries'] = $eagalleries_array;
+        }
+
+
+
+
+
+
+        $the_query = new WP_Query( array(
+            'post_type' => 'eaarticles',
+            'posts_per_page' => -1
+        ));
+
+        if ($the_query->have_posts()) {
+            $posts = array();
+            while ($the_query->have_posts())
+            {
+                $the_query->the_post();
+                $post = $the_query->post;
+                $tabcount = intval( get_post_meta( $post->ID, 'eaarticles_tabcount', true ));
+                $tabs = array();
+                $thumbnail = get_the_post_thumbnail_url($post,'full');
+                if (!empty($thumbnail))
+                {
+                    if (strpos($thumbnail, get_site_url().'/wp-content') !== false) {
+                        $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$thumbnail);
+                        $thumbnail = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$thumbnail);
+                    }
+                }
+
+                for($i=1;$i<=$tabcount; $i++) {
+
+                    $title = get_post_meta($post->ID,'eaarticles_tab'. $i . "_title");
+                    $state = get_post_meta($post->ID,'eaarticles_tab'. $i . "_state");
+                    $type = get_post_meta($post->ID,'eaarticles_tab'. $i . "_type");
+                    $dpage = get_post_meta($post->ID,'eaarticles_tab'. $i . "_dpage");
+                    $durl = get_post_meta($post->ID,'eaarticles_tab'. $i . "_durl");
+                    $val = get_post_meta($post->ID,'eaarticles_tab'. $i . "_val");
+
+                    if ($title) $title = $title[0];
+                    if ($state) $state = $state[0];
+                    if ($type) $type = $type[0];
+                    if ($dpage) $dpage = $dpage[0];
+                    if ($durl) $durl = $durl[0];
+                    if ($val) $val = $val[0];
+
+                    if (strpos($dpage, get_site_url().'/wp-content') !== false) {
+                        if (!empty($dpage) && $dpage !== "#")
+                        {
+                            $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$dpage);
+                            $dpage = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$dpage);
+                        }
+                    }
+
+                    if (strpos($durl, get_site_url().'/wp-content') !== false) {
+                        if (!empty($durl) && $durl !== "#")
+                        {
+                            $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$durl);
+                            $durl = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$durl);
+                        }
+                    }
+
+                    if (strpos($val, get_site_url().'/wp-content') !== false) {
+                        if (!empty($val))
+                        {
+                            $wp_content_importer[$wp_content_importer_counter++] = str_replace(get_site_url().'/wp-content','',$val);
+                            $val = str_replace(get_site_url().'/wp-content','{WP_CONTENT_PATH}',$val);
+                        }
+                    }
+
+                    array_push($tabs,array('title'=>$title,'state'=>$state,'type'=>$type,'dpage'=>$dpage,'durl'=>$durl,'val'=>$val));
+                }
+
+                $subtitle = get_post_meta($post->ID,"eaarticles_subtitle");
+                $tags = get_post_meta($post->ID,"eaarticles_tags");
+                $tabcount = get_post_meta($post->ID,"eaarticles_tabcount");
+                $product_type = get_post_meta($post->ID,"eaarticles_product_type");
+                if ($subtitle) $subtitle = $subtitle[0];
+                if ($tags) $tags = $tags[0];
+                if ($tabcount) $tabcount = $tabcount[0];
+                if ($product_type) $product_type = $product_type[0];
+
+
+                $post = (array) $post;
+                $post['subtitle'] = $subtitle;
+                $post['tags'] = $tags;
+                $post['tabcount'] = $tabcount;
+                $post['product_type'] = $product_type;
+                $post['tabs'] = $tabs;
+                $post['thumbnail'] = $thumbnail;
+
+                array_push($posts,$post);
+                //echo $the_query->post->post_title . "</br>";
+            }
+            $importer['eaarticles'] = $posts;
+        }
+
+        $wp_content_importer = array_unique($wp_content_importer);
+
+
+        $zipname = WP_CONTENT_DIR . '/backup/eapartnerapp/partner-app-backup-'. date('Y-m-d') .'.zip';
+
+        if (PHP_OS == "Windows" || PHP_OS == "WINNT" )
+        {
+            $zipname = str_replace('/','\\',$zipname);
+        }
+
+        if (!file_exists(dirname(($zipname)))) {
+            mkdir(dirname($zipname), 0777, true);
+        }
+
+        if (!empty($wp_content_importer))
+        {
+            $importer['content'] = $wp_content_importer;
+            $za = new ZipArchive;
+            $zipOpen = $za->open($zipname,ZipArchive::CREATE|ZipArchive::OVERWRITE);
+            if ($zipOpen)
+            {
+                $za->addFromString('contents.json',json_encode($importer));
+            }
+
+            foreach ($wp_content_importer as $item)
+            {
+                if ($item)
+                {
+                    $item = ltrim($item,'/');
+                    if (PHP_OS == "Windows" || PHP_OS == "WINNT" )
+                    {
+                        $file_path =  WP_CONTENT_DIR . '\\' . str_replace('/','\\',$item);
+                    }
+                    else
+                    {
+                        $file_path =  WP_CONTENT_DIR . '/' . $item;
+                    }
+
+
+
+                    $add_to_zip = $za->addFile($file_path,'backup/'.$item);
+                }
+            }
+        }
+
+        header('Content-Type: application/zip');
+        header('Content-disposition: attachment; filename='.basename($zipname));
+        header('Content-Length: ' . filesize($zipname));
+
+        readfile($zipname);
+
+
+        //echo $zipname;
+
+
+
+
+
+    }
 
 }

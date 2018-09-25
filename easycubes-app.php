@@ -39,6 +39,7 @@ if ( ! defined( 'EASYCUBES_APP_PLUGIN_URL' ) ) {
 }
 
 
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
