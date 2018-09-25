@@ -282,6 +282,7 @@ class Easycubes_App_Admin {
         // Retrieve current name of the Director and Movie Rating based on review ID
         $subtitle =  get_post_meta( $articles->ID, 'eaarticles_subtitle', true ) ;
         $tags =  get_post_meta( $articles->ID, 'eaarticles_tags', true ) ;
+        $product_type =  get_post_meta( $articles->ID, 'eaarticles_product_type', true ) ;
         $tabcount = intval( get_post_meta( $articles->ID, 'eaarticles_tabcount', true ) );
         ?>
             <div style="display: block; padding: 5px 0">
@@ -291,22 +292,20 @@ class Easycubes_App_Admin {
 
                 </div>
             </div>
-            <div style="display: block; padding: 5px 0">
-                <div style="width: 50%; display: block;">
-                    <label style="width: 50%; display: block; padding:10px 0px; font-weight: bold" for="ea_article_detail_tabcount">Tabs Used</label>
-                    <select style="width: 65px" name="ea_article_detail_tabcount" id="ea_article_detail_tabcount">
-                        <?php
-                        for ($i=1;$i<20;$i++)
-                        {
-                            ?>
-                            <option value="<?php echo $i; ?>" <?php if ($tabcount == $i) {echo " selected";}  ?>><?php echo $i; ?></option>
-                            <?php
-                        }
-
-                        ?>
-                    </select>
+            <div class="form-group">
+                <div class="row" style="padding-top: 10px">
+                    <div class="col-lg-6">
+                        <label for="eaarticles_product_type">Product Type</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <select  class="form-control eaarticles_product_type" id="eaarticles_product_type" name="eaarticles_product_type">
+                            <option value="digital" <?php if ($product_type=="digital") echo "selected"?>>Digital Product</option>
+                            <option value="physical" <?php if ($product_type=="physical") echo "selected"?> >Physical Goods</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+
             <div style="display: block; padding: 5px 0">
                 <div style="width: 50%; display: block;">
                     <label style="width: 50%; display: block; padding:10px 0px; font-weight: bold" for="ea_article_detail_tags">Tags ( Comma[,] delimited )</label>
@@ -314,6 +313,23 @@ class Easycubes_App_Admin {
 
                 </div>
             </div>
+
+            <div style="display: block; padding: 5px 0">
+            <div style="width: 50%; display: block;">
+                <label style="width: 50%; display: block; padding:10px 0px; font-weight: bold" for="ea_article_detail_tabcount">Tabs Used</label>
+                <select style="width: 65px" name="ea_article_detail_tabcount" id="ea_article_detail_tabcount">
+                    <?php
+                    for ($i=1;$i<20;$i++)
+                    {
+                        ?>
+                        <option value="<?php echo $i; ?>" <?php if ($tabcount == $i) {echo " selected";}  ?>><?php echo $i; ?></option>
+                        <?php
+                    }
+
+                    ?>
+                </select>
+            </div>
+        </div>
         <?php
 
     }
@@ -524,6 +540,7 @@ class Easycubes_App_Admin {
         update_post_meta($post->ID, "eaarticles_subtitle", $_POST["ea_article_detail_sub"]);
         update_post_meta($post->ID, "eaarticles_tags", $_POST["ea_article_detail_tags"]);
         update_post_meta($post->ID, "eaarticles_tabcount", $_POST["ea_article_detail_tabcount"]);
+        update_post_meta($post->ID, "eaarticles_product_type", $_POST["eaarticles_product_type"]);
 
     }
 
