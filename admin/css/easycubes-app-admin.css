@@ -2,3 +2,34 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+.eagallery-media-close{
+    background-color: #2C393F;
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+
+.thumbnail-overlay-vid{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    opacity: .5;
+    background-color: #008CBA;
+}
+
+.thumbnail-overlay-vid > i{
+	color: white;
+    font-size: 40px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    background: red;
+    opacity: .8;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

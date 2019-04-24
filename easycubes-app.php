@@ -74,6 +74,19 @@ register_deactivation_hook(__FILE__, 'deactivate_easycubes_app');
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path(__FILE__) . 'includes/class-easycubes-app.php';
+//require_once dirname( __FILE__ ) . 'includes/class-tgm-plugin-activation.php';
+
+
+if (PHP_OS == "Windows" || PHP_OS == "WINNT" )
+{
+    $tgm = str_replace("/","\\",plugin_dir_path(__FILE__)) . 'includes\\class-tgm-plugin-activation.php';
+}
+else
+{
+    $tgm = plugin_dir_path(__FILE__) . 'includes/class-tgm-plugin-activation.php';
+}
+
+require_once  $tgm;
 
 /**
  * Begins execution of the plugin.
