@@ -1,4 +1,4 @@
-=== Plugin Name ===
+Easycubes Partner Page App
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: https://www.facebook.com/llxx.lord.xxll
 Tags: comments, spam
