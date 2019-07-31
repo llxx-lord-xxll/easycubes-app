@@ -312,6 +312,7 @@ class Easycubes_App_Public {
                         ));
                     }
 
+                    /*
                     if ($i==1 && $notice == 1)
                     {
                         array_push($tabs,$this->get_notice_buy());
@@ -320,6 +321,8 @@ class Easycubes_App_Public {
                     {
                         array_push($tabs,$this->get_notice_nobuy());
                     }
+                    */
+
                 }
 
 

@@ -33,7 +33,7 @@ $eaaddresses = get_terms(array(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php the_title(); ?></title>
+    <title><?php bloginfo( 'name' ); ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -58,6 +58,7 @@ $eaaddresses = get_terms(array(
     <!-- Media Boxes CSS -->
 
     <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/easycubes-app-public.css">
+    <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/easycubes-app-public-orderpage.css">
 
     <meta name="broken_img" content="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/images/missing.png"/>
 
@@ -71,29 +72,11 @@ $eaaddresses = get_terms(array(
 <section class="page-header">
     <div class="container-fluid">
         <div class="pull-left">
-            <a class="logo" href=""><img src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/images/logo.png"></a>
+            <a class="logo" href=""><img src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/images/eb-logo-color@4x.png"></a>
         </div>
 
         <div class="pull-right">
-            <form class="form-search">
-                <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                <input autocomplete="off" name="query" type="text" placeholder="Search">
-            </form>
-            <?php
-            if (is_user_logged_in()) {
-
-                ?>
-                <a href="#" class="opencart"><i class="glyphicon glyphicon-shopping-cart"></i> </a>
-
-            <?php }
-            else
-            {
-                ?>
-                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i> </a>
-            <?php
-
-            }
-            ?>
+            <a href="/" target="_blank" class="nav-link">EasyCubes&reg; Home Page</a>
         </div>
     </div>
 </section>
@@ -342,7 +325,7 @@ $eaaddresses = get_terms(array(
 
 
             <div class="title_action_bar">
-                <div class="title col-lg-6 col-md-6 col-sm-6">
+                <div class="title col-lg-7 col-md-7 col-sm-7">
 
                     <div class="col-lg-3 col-md-5 col-sm-4" style="height: 100%;">
                         <a href="#" class="title-logo">
@@ -350,52 +333,46 @@ $eaaddresses = get_terms(array(
                         </a>
                     </div>
                     <div class="col-lg-9 col-md-7 col-sm-8">
-                        <h2>
-
-                        </h2>
-                        <span class="text-date"></span>
+                        <h2></h2>
+                        <span class="text-date hidden"></span>
                         <p></p>
                     </div>
 
                 </div>
 
-                <div id="action-ebook" class="action col-lg-6 col-md-6 col-sm-6">
-                    <div class="row phyisical" style="display: none;">
-                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 buy">
-                            <a href="#"  data-target="#Buy"><span class="glyphicon glyphicon-file"></span>Buy</a>
-                        </div> -->
-                        <div class="col-lg-2 col-md-2 col-sm-2 preview">
-                            <a href="#" data-target="#preview"><span class="glyphicon glyphicon-arrow-down"></span>Preview</a>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 source">
-                            <a href="#" data-target="#source"><span class="glyphicon glyphicon-arrow-down"></span>Source</a>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 share">
-                            <a href="#" data-toggle="modal" data-target="#share"><span
-                                        class="glyphicon glyphicon-share"></span>Share</a>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 ask">
-                            <a href="#" data-toggle="modal" data-target="#ask"><span
-                                        class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
+                <div id="action-ebook" class="action col-lg-5 col-md-5 col-sm-5">
+                    <div class="row physical" style="display: none;">
+                        <div class="d-flex justify-end">
+                            <div class="col-auto preview">
+                                <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
+                            </div>
+                            <div class="col-auto source">
+                                <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
+                            </div>
+                            <div class="col-auto share">
+                                <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
+                            </div>
+                            <div class="col-auto ask">
+                                <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row digital" style="display: block;">
-                        <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1 preview">
-                            <a href="#" data-target="#preview"><span class="glyphicon glyphicon-arrow-down"></span>Preview</a>
+                        <div class="d-flex justify-end">
+                            <div class="col-auto preview">
+                                <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
+                            </div>
+                            <div class="col-auto source">
+                                <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
+                            </div>
+                            <div class="col-auto share">
+                                <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
+                            </div>
+                            <div class="col-auto ask">
+                                <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
+                            </div>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-3 source">
-                            <a href="#" data-target="#source"><span class="glyphicon glyphicon-arrow-down"></span>Source</a>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-3 share">
-                            <a href="#" data-toggle="modal" data-target="#share"><span
-                                        class="glyphicon glyphicon-share"></span>Share</a>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-3 ask">
-                            <a href="#" data-toggle="modal" data-target="#ask"><span
-                                        class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
-                        </div>
-
                     </div>
                 </div>
 
@@ -432,17 +409,14 @@ $eaaddresses = get_terms(array(
         </div>
     </div>
 
-
+ <!--
     <div class="order-page">
         <div class="container" style="height: 100%;">
             <div class="pull-right" style="padding-top:5px ">
                 <a class="btn-remove-order" href="#"><span style="font-size: 40px;    color: black;" class="glyphicon glyphicon-remove-circle"></span></a>
             </div>
 
-           <!-- <h2 class="text-uppercase" style="color: black">
-                Order page
-            </h2>
-            -->
+
 
             <div class="row">
                 <div class="col-lg-4 col-md-4">
@@ -1130,11 +1104,7 @@ $eaaddresses = get_terms(array(
     ul. Winogrady 28, 61-663 Poznań
     Poland">see full address</a>)</label>
 
-                                        <!--
-                                        <div class="radio">
-                                            <label><input type="radio" name="ship-poland" value="express">Express Package <a href="#"> View rates</a></label>
-                                        </div>
-                                        -->
+
                                         <div class="radio">
                                             <label><input type="radio" name="ship-poland" value="normal">Normal Package <a href="https://easycubes-s3.s3.eu-west-3.amazonaws.com/Others/Samples_shipped%20from%20Poland_Normal%20Package.pdf"> View rates</a></label>
                                         </div>
@@ -1240,6 +1210,11 @@ $eaaddresses = get_terms(array(
 
     </div>
     </div>
+
+    -->
+
+    <?php include ("easycubes-app-public-orderpage.php") ; ?>
+
 
 </section>
 
@@ -1587,7 +1562,7 @@ do_shortcode('[easycubes_app_partner_generate]');
 
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public.js"></script>
-
+<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public-orderpage.js"></script>
 
 <script>
     window.ga = window.ga || function () {

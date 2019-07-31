@@ -108,17 +108,17 @@
             if (json['product_type'] == "digital")
             {
                 $('#action-ebook .digital').css('display','block');
-                $('#action-ebook .phyisical').css('display','none');
+                $('#action-ebook .physical').css('display','none');
 
             }
             else
             {
 
                 $('#action-ebook .digital').css('display','block');
-                $('#action-ebook .phyisical').css('display','none');
+                $('#action-ebook .physical').css('display','none');
                 /*
                 $('#action-ebook .digital').css('display','none');
-                $('#action-ebook .phyisical').css('display','block');
+                $('#action-ebook .physical').css('display','block');
                 */
             }
 
@@ -464,7 +464,7 @@
             else {
                 $('#webshopaccess-form').trigger('reset');
                 $('#webshopaccess button.close').click();
-                $('.order-page').show();
+                $('.order-page-new').show();
 
             }
         });
@@ -526,10 +526,7 @@
         $('#webshopaccess-form .messages').html("");
         $('#webshopaccess').modal('show');
     });
-    $(".opencart").on('click',function (e) {
-        e.preventDefault();
-        $('.order-page').show();
-    });
+
 
     $('.btn-remove-search').on('click',function (e) {
         e.preventDefault();
@@ -616,6 +613,15 @@
         else
         {
             $("#action-ebook a[data-target$='#source']").parent().css('display','none');
+        }
+
+        if ($(this).parent().attr('data-dpage') !== '#' && validate_url($(this).parent().attr('data-dpage')) )
+        {
+            $("#action-ebook a[data-target$='#preview']").parent().css('display','block');
+        }
+        else
+        {
+            $("#action-ebook a[data-target$='#preview']").parent().css('display','none');
         }
 
         var mediaGrid = $("#" + $(this).attr('href').replace('#atab','grid'));
