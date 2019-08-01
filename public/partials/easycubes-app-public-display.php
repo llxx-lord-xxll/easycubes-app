@@ -49,11 +49,11 @@ $eaaddresses = get_terms(array(
 
     <!-- Media Boxes CSS -->
     <link rel="stylesheet"
-          href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Font%20Awesome/css/font-awesome.min.css">
+    href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Font%20Awesome/css/font-awesome.min.css">
     <link rel="stylesheet"
-          href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific%20Popup/magnific-popup.css">
+    href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific%20Popup/magnific-popup.css">
     <link rel="stylesheet"
-          href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.css">
+    href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/css/mediaBoxes.css">
     <!-- Media Boxes CSS -->
 
@@ -71,12 +71,28 @@ $eaaddresses = get_terms(array(
 
 <section class="page-header">
     <div class="container-fluid">
-        <div class="pull-left">
-            <a class="logo" href=""><img src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/images/eb-logo-color@4x.png"></a>
-        </div>
+        <div class="row no-gutters justify-content-between">
+            <div class="col">
+                <a class="logo" href=""><img src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/images/eb-logo-color@4x.png"></a>
+            </div>
 
-        <div class="pull-right">
-            <a href="/" target="_blank" class="nav-link">EasyCubes&reg; Home Page</a>
+            <div class="col-auto">
+                <div class="row">
+                    <div class="col">
+                        <form class="form-search">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                    <input autocomplete="off" name="query" type="text" placeholder="Search" class="form-control" aria-label="" aria-describedby="basic-addon1" style="width: 15vw;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col text-right">
+                        <a href="/" target="_blank" class="nav-link">EasyCubes&reg; Home Page</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -96,318 +112,318 @@ $eaaddresses = get_terms(array(
                             echo "active";
                             $bf = false;
                         } ?>">
-                            <a href="#tab_<?php echo $t_id; ?>" data-toggle="tab">
-                                <img src="<?php echo $eafolder_term_meta; ?>">
-                                <p><?php echo strtoupper($eafolder->name); ?></p>
-                            </a>
-                        </li>
-                        <?php
-                    }
+                        <a href="#tab_<?php echo $t_id; ?>" data-toggle="tab">
+                            <img src="<?php echo $eafolder_term_meta; ?>">
+                            <p><?php echo strtoupper($eafolder->name); ?></p>
+                        </a>
+                    </li>
+                    <?php
                 }
-                ?>
-            </ul>
+            }
+            ?>
+        </ul>
 
-            <!--2ND Tab menu-->
-            <div class="tab-content">
-                <!--all tab menu-->
+        <!--2ND Tab menu-->
+        <div class="tab-content">
+            <!--all tab menu-->
 
-                <?php
-                if (!empty($eafolders)) {
-                    $bf = true;
-                    foreach ($eafolders as $eafolder) {
-                        $t_id = $eafolder->term_id;
-                        $eafolders_l2 = get_terms(array(
-                            'taxonomy' => 'eafolders',
-                            'orderby' => 'order',
-                            'order' => 'ASC',
-                            'hide_empty' => false,
-                            'parent' => $t_id
-                        ));
+            <?php
+            if (!empty($eafolders)) {
+                $bf = true;
+                foreach ($eafolders as $eafolder) {
+                    $t_id = $eafolder->term_id;
+                    $eafolders_l2 = get_terms(array(
+                        'taxonomy' => 'eafolders',
+                        'orderby' => 'order',
+                        'order' => 'ASC',
+                        'hide_empty' => false,
+                        'parent' => $t_id
+                    ));
 
+                    ?>
+                    <div id="tab_<?php echo $t_id; ?>" class="<?php if ($bf) {
+                        echo "active";
+                        $bf = false;
+                    } ?> tab-pane">
+                    <?php
+                    if (!empty($eafolders_l2)) {
                         ?>
-                        <div id="tab_<?php echo $t_id; ?>" class="<?php if ($bf) {
-                            echo "active";
-                            $bf = false;
-                        } ?> tab-pane">
+
+                        <ul class="nav nav-tabs">
+
                             <?php
-                            if (!empty($eafolders_l2)) {
-                                ?>
-
-                                <ul class="nav nav-tabs">
-
-                                    <?php
-                                    $bf = true;
-                                    foreach ($eafolders_l2 as $eafolder_l2) {
-                                        $t_id_l2 = $eafolder_l2->term_id;
-                                        $eafolder_l2_term_meta = get_option("eafolder_taxonomy_$t_id_l2" . "_fimg");
-                                        ?>
-                                        <li class="<?php if ($bf) {
-                                            echo "active";
-                                            $bf = false;
-                                        } ?>">
-                                            <a href="#tab_<?php echo $t_id_l2; ?>" data-toggle="tab">
-                                                <img src="<?php echo $eafolder_l2_term_meta; ?>">
-                                                <p><?php echo strtoupper($eafolder_l2->name); ?></p>
-                                            </a>
-                                        </li>
-
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-
-
-                                <?php
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
-
-
-            </div>
-
-            <!-- 3RD Tab menu -->
-            <div class="tab-content">
-                <!--all tab menu-->
-                <?php
-                if (!empty($eafolders)) {
-                    $bf = true;
-                    foreach ($eafolders as $eafolder) {
-                        $t_id = $eafolder->term_id;
-                        $eafolders_l2 = get_terms(array(
-                            'taxonomy' => 'eafolders',
-                            'orderby' => 'order',
-                            'order' => 'ASC',
-                            'hide_empty' => false,
-                            'parent' => $t_id
-                        ));
-                        if (!empty($eafolders_l2)) {
-
+                            $bf = true;
                             foreach ($eafolders_l2 as $eafolder_l2) {
                                 $t_id_l2 = $eafolder_l2->term_id;
-
-
+                                $eafolder_l2_term_meta = get_option("eafolder_taxonomy_$t_id_l2" . "_fimg");
                                 ?>
-                                <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane <?php if ($bf) {
+                                <li class="<?php if ($bf) {
                                     echo "active";
                                     $bf = false;
                                 } ?>">
+                                <a href="#tab_<?php echo $t_id_l2; ?>" data-toggle="tab">
+                                    <img src="<?php echo $eafolder_l2_term_meta; ?>">
+                                    <p><?php echo strtoupper($eafolder_l2->name); ?></p>
+                                </a>
+                            </li>
 
-
-                                    <ul class="nav nav-tabs">
-
-                                        <?php
-
-                                        //Others
-                                        $the_query = new WP_Query(array(
-                                            'post_type' => 'eaarticles',
-                                            'post_status' => 'publish',
-                                            'posts_per_page' => -1,
-                                            'tax_query' => array(
-                                                array(
-                                                    'taxonomy' => 'eafolders',
-                                                    'field' => 'id',
-                                                    'terms' => $t_id_l2,
-                                                    'include_children' => false,
-                                                )
-                                            ),
-                                            'orderby' => 'menu_order',
-                                            'order' => 'ASC'
-                                        ));
-
-                                        if ($the_query->have_posts()) {
-                                            ?>
-                                            <ul class="nav nav-pills">
-                                                <span><?php echo strtoupper($eafolder_l2->name) ?></span>
-                                                <?php
-                                                while ($the_query->have_posts()) {
-                                                    $the_query->the_post();
-                                                    ?>
-                                                    <li><a class="eaarticles"
-                                                           href="#post_<?php echo $the_query->post->ID; ?>"
-                                                           data-toggle="tab"><img
-                                                                    src="<?php echo get_the_post_thumbnail_url($the_query->post, 'thumbnail') ?>">
-                                                            <p><?php echo $the_query->post->post_title; ?></p></a></li>
-                                                    <?php
-
-                                                }
-                                                ?>
-                                            </ul>
-                                            <?php
-                                        }
-
-
-                                        $eafolders_l3 = get_terms(array(
-                                            'taxonomy' => 'eafolders',
-                                            'orderby' => 'order',
-                                            'order' => 'ASC',
-                                            'hide_empty' => false,
-                                            'parent' => $t_id_l2));
-
-
-                                        if (!empty($eafolders_l3)) {
-
-                                        ?>
-
-
-                                        <?php
-                                        foreach ($eafolders_l3 as $eafolder_l3) {
-                                            $t_id_l3 = $eafolder_l3->term_id;
-
-                                            ?>
-                                            <ul class="nav nav-pills">
-                                                <span><?php echo strtoupper($eafolder_l3->name); ?></span>
-                                                <?php
-
-                                                $the_query = new WP_Query(array(
-                                                    'post_type' => 'eaarticles',
-                                                    'post_status' => 'publish',
-                                                    'posts_per_page' => -1,
-                                                    'tax_query' => array(
-                                                        array(
-                                                            'taxonomy' => 'eafolders',
-                                                            'field' => 'id',
-                                                            'terms' => $eafolder_l3->term_id,
-                                                            'include_children' => false,
-                                                        )
-                                                    ),
-                                                    'orderby' => 'menu_order',
-                                                    'order' => 'ASC'
-                                                ));
-
-                                                if ($the_query->have_posts()) {
-
-                                                    while ($the_query->have_posts()) {
-                                                        $the_query->the_post();
-                                                        ?>
-                                                        <li><a class="eaarticles"
-                                                               href="#post_<?php echo $the_query->post->ID; ?>"
-                                                               data-toggle="tab"><img
-                                                                        src="<?php echo get_the_post_thumbnail_url($the_query->post, 'thumbnail') ?>">
-                                                                <p><?php echo $the_query->post->post_title; ?></p></a>
-                                                        </li>
-                                                        <?php
-
-                                                    }
-                                                }
-                                                ?>
-                                            </ul>
-                                            <?php
-                                        }
-
-
-                                        ?>
-                                    </ul>
-
-                                    <?php
-                                    }
-
-                                    ?>
-                                </div>
-                                <?php
-                            }
+                            <?php
                         }
-                    }
+                        ?>
+                    </ul>
+
+
+                    <?php
                 }
                 ?>
-
-
             </div>
+            <?php
+        }
+    }
+    ?>
 
+
+</div>
+
+<!-- 3RD Tab menu -->
+<div class="tab-content">
+    <!--all tab menu-->
+    <?php
+    if (!empty($eafolders)) {
+        $bf = true;
+        foreach ($eafolders as $eafolder) {
+            $t_id = $eafolder->term_id;
+            $eafolders_l2 = get_terms(array(
+                'taxonomy' => 'eafolders',
+                'orderby' => 'order',
+                'order' => 'ASC',
+                'hide_empty' => false,
+                'parent' => $t_id
+            ));
+            if (!empty($eafolders_l2)) {
+
+                foreach ($eafolders_l2 as $eafolder_l2) {
+                    $t_id_l2 = $eafolder_l2->term_id;
+
+
+                    ?>
+                    <div id="tab_<?php echo $t_id_l2; ?>" class="tab-pane <?php if ($bf) {
+                        echo "active";
+                        $bf = false;
+                    } ?>">
+
+
+                    <ul class="nav nav-tabs">
+
+                        <?php
+
+                                        //Others
+                        $the_query = new WP_Query(array(
+                            'post_type' => 'eaarticles',
+                            'post_status' => 'publish',
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'eafolders',
+                                    'field' => 'id',
+                                    'terms' => $t_id_l2,
+                                    'include_children' => false,
+                                )
+                            ),
+                            'orderby' => 'menu_order',
+                            'order' => 'ASC'
+                        ));
+
+                        if ($the_query->have_posts()) {
+                            ?>
+                            <ul class="nav nav-pills">
+                                <span><?php echo strtoupper($eafolder_l2->name) ?></span>
+                                <?php
+                                while ($the_query->have_posts()) {
+                                    $the_query->the_post();
+                                    ?>
+                                    <li><a class="eaarticles"
+                                     href="#post_<?php echo $the_query->post->ID; ?>"
+                                     data-toggle="tab"><img
+                                     src="<?php echo get_the_post_thumbnail_url($the_query->post, 'thumbnail') ?>">
+                                     <p><?php echo $the_query->post->post_title; ?></p></a></li>
+                                     <?php
+
+                                 }
+                                 ?>
+                             </ul>
+                             <?php
+                         }
+
+
+                         $eafolders_l3 = get_terms(array(
+                            'taxonomy' => 'eafolders',
+                            'orderby' => 'order',
+                            'order' => 'ASC',
+                            'hide_empty' => false,
+                            'parent' => $t_id_l2));
+
+
+                         if (!empty($eafolders_l3)) {
+
+                            ?>
+
+
+                            <?php
+                            foreach ($eafolders_l3 as $eafolder_l3) {
+                                $t_id_l3 = $eafolder_l3->term_id;
+
+                                ?>
+                                <ul class="nav nav-pills">
+                                    <span><?php echo strtoupper($eafolder_l3->name); ?></span>
+                                    <?php
+
+                                    $the_query = new WP_Query(array(
+                                        'post_type' => 'eaarticles',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => -1,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'eafolders',
+                                                'field' => 'id',
+                                                'terms' => $eafolder_l3->term_id,
+                                                'include_children' => false,
+                                            )
+                                        ),
+                                        'orderby' => 'menu_order',
+                                        'order' => 'ASC'
+                                    ));
+
+                                    if ($the_query->have_posts()) {
+
+                                        while ($the_query->have_posts()) {
+                                            $the_query->the_post();
+                                            ?>
+                                            <li><a class="eaarticles"
+                                             href="#post_<?php echo $the_query->post->ID; ?>"
+                                             data-toggle="tab"><img
+                                             src="<?php echo get_the_post_thumbnail_url($the_query->post, 'thumbnail') ?>">
+                                             <p><?php echo $the_query->post->post_title; ?></p></a>
+                                         </li>
+                                         <?php
+
+                                     }
+                                 }
+                                 ?>
+                             </ul>
+                             <?php
+                         }
+
+
+                         ?>
+                     </ul>
+
+                     <?php
+                 }
+
+                 ?>
+             </div>
+             <?php
+         }
+     }
+ }
+}
+?>
+
+
+</div>
+
+
+</div>
+
+
+<div class="col-lg-8 col-md-8 col-sm-8 content">
+
+
+    <div class="title_action_bar">
+        <div class="title col-lg-7 col-md-7 col-sm-7">
+
+            <div class="col-lg-3 col-md-5 col-sm-4" style="height: 100%;">
+                <a href="#" class="title-logo">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <div class="col-lg-9 col-md-7 col-sm-8">
+                <h2></h2>
+                <span class="text-date hidden"></span>
+                <p></p>
+            </div>
 
         </div>
 
-
-        <div class="col-lg-8 col-md-8 col-sm-8 content">
-
-
-            <div class="title_action_bar">
-                <div class="title col-lg-7 col-md-7 col-sm-7">
-
-                    <div class="col-lg-3 col-md-5 col-sm-4" style="height: 100%;">
-                        <a href="#" class="title-logo">
-                            <img src="" alt="">
-                        </a>
+        <div id="action-ebook" class="action col-lg-5 col-md-5 col-sm-5">
+            <div class="row physical" style="display: none;">
+                <div class="d-flex justify-end">
+                    <div class="col-auto preview">
+                        <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
                     </div>
-                    <div class="col-lg-9 col-md-7 col-sm-8">
-                        <h2></h2>
-                        <span class="text-date hidden"></span>
-                        <p></p>
+                    <div class="col-auto source">
+                        <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
                     </div>
-
-                </div>
-
-                <div id="action-ebook" class="action col-lg-5 col-md-5 col-sm-5">
-                    <div class="row physical" style="display: none;">
-                        <div class="d-flex justify-end">
-                            <div class="col-auto preview">
-                                <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
-                            </div>
-                            <div class="col-auto source">
-                                <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
-                            </div>
-                            <div class="col-auto share">
-                                <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
-                            </div>
-                            <div class="col-auto ask">
-                                <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
-                            </div>
-                        </div>
+                    <div class="col-auto share">
+                        <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
                     </div>
-
-                    <div class="row digital" style="display: block;">
-                        <div class="d-flex justify-end">
-                            <div class="col-auto preview">
-                                <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
-                            </div>
-                            <div class="col-auto source">
-                                <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
-                            </div>
-                            <div class="col-auto share">
-                                <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
-                            </div>
-                            <div class="col-auto ask">
-                                <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
-                            </div>
-                        </div>
+                    <div class="col-auto ask">
+                        <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
                     </div>
                 </div>
-
             </div>
 
-
-            <div class="media_area">
-                <ul class="nav nav-tabs"></ul>
-
-                <div class="tab-content">
-
+            <div class="row digital" style="display: block;">
+                <div class="d-flex justify-end">
+                    <div class="col-auto preview">
+                        <a href="#" data-target="#preview"><span class="glyphicon glyphicon-download-alt"></span>Download Preview</a>
+                    </div>
+                    <div class="col-auto source">
+                        <a href="#" data-target="#source"><span class="glyphicon glyphicon-download-alt"></span>Download Source</a>
+                    </div>
+                    <div class="col-auto share">
+                        <a href="#" data-toggle="modal" data-target="#share"><span class="glyphicon glyphicon-share"></span>Share</a>
+                    </div>
+                    <div class="col-auto ask">
+                        <a href="#" data-toggle="modal" data-target="#ask"><span class="glyphicon glyphicon-question-sign"></span>Ask Us</a>
+                    </div>
                 </div>
-
             </div>
-
         </div>
+
     </div>
 
 
-    <div class="easearch">
-        <div class="container" style="height: 100%;">
-            <div class="pull-right" style="padding-top:5px ">
-                <a class="btn-remove-search" href="#"><span class="glyphicon glyphicon-remove"></span></a>
-            </div>
-            <h2 class="col-lg-12" style="color: black">
-                Search results
-            </h2>
+    <div class="media_area">
+        <ul class="nav nav-tabs"></ul>
 
-            <div class="col-lg-12" style="background: white;height: 80%;overflow-x: hidden;overflow-y: scroll;">
-
-
-            </div>
+        <div class="tab-content">
 
         </div>
+
     </div>
+
+</div>
+</div>
+
+
+<div class="easearch">
+    <div class="container" style="height: 100%;">
+        <div class="pull-right" style="padding-top:5px ">
+            <a class="btn-remove-search" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+        </div>
+        <h2 class="col-lg-12" style="color: black">
+            Search results
+        </h2>
+
+        <div class="col-lg-12" style="background: white;height: 80%;overflow-x: hidden;overflow-y: scroll;">
+
+
+        </div>
+
+    </div>
+</div>
 
  <!--
     <div class="order-page">
@@ -1211,9 +1227,9 @@ $eaaddresses = get_terms(array(
     </div>
     </div>
 
-    -->
+-->
 
-    <?php include ("easycubes-app-public-orderpage.php") ; ?>
+<?php include ("easycubes-app-public-orderpage.php") ; ?>
 
 
 </section>
@@ -1302,8 +1318,8 @@ $eaaddresses = get_terms(array(
                                 <div class="form-group">
                                     <label for="form_email">From *</label>
                                     <input id="form_email" type="email" name="emailFrom" class="form-control"
-                                           placeholder="Please enter your email *" required="required"
-                                           data-error="Valid email is required.">
+                                    placeholder="Please enter your email *" required="required"
+                                    data-error="Valid email is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -1314,8 +1330,8 @@ $eaaddresses = get_terms(array(
                                 <div class="form-group">
                                     <label for="form_message">Message </label>
                                     <textarea id="form_message" name="message" class="form-control"
-                                              placeholder="I have a question about this product..." rows="4"
-                                              required="required" data-error="Please, leave us a message."></textarea>
+                                    placeholder="I have a question about this product..." rows="4"
+                                    required="required" data-error="Please, leave us a message."></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -1354,7 +1370,7 @@ $eaaddresses = get_terms(array(
                     <div class="row">
                         <div class="form-group">
                             <input class="form-control" type="password" name="passphrase" autocomplete="off"
-                                   placeholder="Enter your access key"/>
+                            placeholder="Enter your access key"/>
                         </div>
                     </div>
 
@@ -1362,62 +1378,62 @@ $eaaddresses = get_terms(array(
                         <div class="col-lg-8">
                             <p class="text-warning">
                                 By clicking proceed, you agree that you are authorized by <a
-                                        href="https://easycubes.com">Easycubes</a>
+                                href="https://easycubes.com">Easycubes</a>
                             </p>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group pull-right">
                                 <button type="submit" class="btn btn-primary btn-send">Proceed <span
-                                            class="fa fa-arrow-right"></span></button>
+                                    class="fa fa-arrow-right"></span></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </form>
+                    </form>
+                </div>
+
             </div>
-
         </div>
     </div>
-</div>
 
-<div id="webshopaccess" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" style="text-align-last: center">Login to webshop</h4>
-            </div>
-            <div class="modal-body">
-                <form id="webshopaccess-form" method="post" action="" role="form">
-                    <div class="messages"></div>
-                    <div class="row">
-                        <div class="form-group">
-                            <input class="form-control" type="password" name="passphrase" autocomplete="off"
-                                   placeholder="Enter your webshop access key"/>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p class="text-warning">
-                                By clicking proceed, you agree that you are authorized by <a
-                                        href="https://easycubes.com">Easycubes</a>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group pull-right">
-                                <button type="submit" class="btn btn-primary btn-send">Proceed <span
-                                            class="fa fa-arrow-right"></span></button>
+    <div id="webshopaccess" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="text-align-last: center">Login to webshop</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="webshopaccess-form" method="post" action="" role="form">
+                        <div class="messages"></div>
+                        <div class="row">
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="passphrase" autocomplete="off"
+                                placeholder="Enter your webshop access key"/>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="text-warning">
+                                    By clicking proceed, you agree that you are authorized by <a
+                                    href="https://easycubes.com">Easycubes</a>
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group pull-right">
+                                    <button type="submit" class="btn btn-primary btn-send">Proceed <span
+                                        class="fa fa-arrow-right"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
 
-                </form>
+                </div>
             </div>
-
         </div>
-    </div>
-</div>
 
 
 <!--
@@ -1538,73 +1554,73 @@ do_shortcode('[easycubes_app_partner_generate]');
 
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/bootstrap.js"></script>
 
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/loadingoverlay.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/vendor/loadingoverlay.min.js"></script>
 
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/plugins.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/plugins.js"></script>
 
-<!-- Media Boxes SCRIPTS -->
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Isotope/jquery.isotope.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Transit/jquery.transit.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/jQuery Easing/jquery.easing.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Waypoints/waypoints.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Modernizr/modernizr.custom.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific Popup/jquery.magnific-popup.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.dropdown.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<!-- Media Boxes SCRIPTS -->
-
-
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public.js"></script>
-<script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public-orderpage.js"></script>
-
-<script>
-    window.ga = window.ga || function () {
-        (ga.q = ga.q || []).push(arguments)
-    };
-    ga.l = +new Date;
-    ga('create', 'UA-42088978-9', 'auto');
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- Media Boxes SCRIPTS -->
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Isotope/jquery.isotope.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Transit/jquery.transit.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/jQuery Easing/jquery.easing.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Waypoints/waypoints.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Modernizr/modernizr.custom.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Magnific Popup/jquery.magnific-popup.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/components/Fancybox/jquery.fancybox.min.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.dropdown.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/jquery.mediaBoxes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <!-- Media Boxes SCRIPTS -->
 
 
-<div class="loadingoverlayFake"
-     style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public.js"></script>
+    <script src="<?php echo EASYCUBES_APP_PLUGIN_URL; ?>/public/js/easycubes-app-public-orderpage.js"></script>
+
+    <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-42088978-9', 'auto');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <div class="loadingoverlayFake"
+    style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
     <div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
-             style="width: 100%; height: 100%; fill: rgb(32, 32, 32);">
-            <circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle>
-        </svg>
-    </div>
+        style="width: 100%; height: 100%; fill: rgb(32, 32, 32);">
+        <circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle>
+        <circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle>
+    </svg>
+</div>
 </div>
 <div class="loadingoverlayFake"
-     style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
-    <div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
-             style="width: 100%; height: 100%; fill: rgb(32, 32, 32);">
-            <circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle>
-            <circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle>
-        </svg>
-    </div>
+style="box-sizing: border-box; position: fixed; display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around; background: rgba(255, 255, 255, 0.8); top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1;">
+<div style="order: 1; box-sizing: border-box; overflow: visible; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; animation-name: loadingoverlay_animation__rotate_right; animation-duration: 2000ms; animation-timing-function: linear; animation-iteration-count: infinite; width: 120px; height: 120px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
+    style="width: 100%; height: 100%; fill: rgb(32, 32, 32);">
+    <circle r="80" cx="500" cy="90" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="500" cy="910" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="90" cy="500" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="910" cy="500" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="212" cy="212" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="788" cy="212" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="212" cy="788" style="fill: rgb(32, 32, 32);"></circle>
+    <circle r="80" cx="788" cy="788" style="fill: rgb(32, 32, 32);"></circle>
+</svg>
+</div>
 </div>
 
 
